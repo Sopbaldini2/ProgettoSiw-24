@@ -42,9 +42,9 @@
         <!-- Dipendente section starts-->
         
         <div class="dipendente_main">
-			<h1>Dipendenti</h1>
+			<h1>Performers</h1>
 
-	        <div th:if="${dipendenti==null || dipendenti.isEmpty()}">Non ci sono dipendenti nel sistema</div>
+	        <div th:if="${dipendenti==null || dipendenti.isEmpty()}">Non ci sono performers nel sistema</div>
 	        <ul>
 				<li th:each="dipendente : ${dipendenti}">
 					<div class="immagine">

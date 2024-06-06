@@ -1,12 +1,5 @@
 :root{
 	--pink: #e84393;
-	--background-color: #1a1a1a;
-    --text-color: #fff;
-    --input-background-color: #2a2a2a;
-    --input-border-color: #444;
-    --input-text-color: #fff;
-    --button-text-color: #fff;
-    --error-color: #ff4d4d;	
 }
 
 *{
@@ -110,8 +103,8 @@ header .fa-bars{
 /*New Servizio*/
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: #1a1a1a;
+    color: #fff;
     font-size: 1.6rem;
     line-height: 1.6;
     padding: 11rem;
@@ -144,7 +137,7 @@ form div {
 label {
     display: block;
     margin-bottom: .5rem;
-    color: var(--text-color);
+    color: #fff;
     font-weight: bold;
 }
 
@@ -154,9 +147,9 @@ input[type="file"] {
     width: 100%;
     padding: .8rem;
     border-radius: 5px;
-    border: 1px solid var(--input-border-color);
-    background: var(--input-background-color);
-    color: var(--input-text-color);
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: #fff;
     font-size: 1.6rem;
 }
 
@@ -186,7 +179,7 @@ button:hover {
 }
 
 .error {
-    color: var(--error-color);
+    color: #ff4d4d;
     font-size: 1.4rem;
     margin-top: .5rem;
 }

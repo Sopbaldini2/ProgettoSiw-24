@@ -12,7 +12,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: url(/images/Matrimonio33.png);
     background-size: cover;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 body .logo {

@@ -1,54 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi - Nuovo Dipendente</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/newDipendente.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
 
-<head>
-	<title>
-		New Dipendente
-	</title>
-	<link rel="stylesheet" href="/css/stile.css" />
-</head>
+			<nav class="navbar">
+				<a href="/admin/indexAdmin">Home</a>
+				<a href="/aboutUs">About Us</a>
+			</nav>
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+			</div>			
+			
+			
+		</header>
+		
+        <!-- header section ends -->
+        
+        <!-- New Dipendente section starts -->
+        
+        <div class="dipendente_main">
+			<h1>Aggiungi un Performer</h1>
+            <form th:action="@{/admin/dipendente}" method="POST" th:object="${dipendente}" class="form">
+				<div th:if="${#fields.hasGlobalErrors()}">
+					<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+                </div>
 
-<body>
-	
-	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
-	<h1>Aggiungi un dipendente</h1>
-	<form th:action="@{/admin/dipendente}" method="POST" th:object="${dipendente}">
-  		<div th:if="${#fields.hasGlobalErrors()}">
-  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
-  		</div>
-		
-		<div>
-			<label>Nome:</label> 
-			<span><input type="text" th:field="${dipendente.nome}" /></span>
-		    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
-		    </span>
-		</div>
-		
-		<div>
-			<label>Cognome:</label> <span><input type="text" th:field="${dipendente.cognome}" /></span>
-		    <span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}">
-		    </span>
-		</div>
+                <div>
+					<label for="nome">Nome:</label>
+                    <input type="text" th:field="${dipendente.nome}" class="form-control" id="nome" />
+                    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+               </div>
 
-		<div>
-			<label>Email:</label> <span><input type="text" th:field="${dipendente.email}" /></span>
-		    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
-		    </span>
-		</div>
-		
-		<div>
-			<label>Telefono:</label> <span><input type="text" th:field="${dipendente.telefono}" /></span>
-		    <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">
-		    </span>
-		</div>
+               <div>
+				   <label for="cognome">Cognome:</label>
+                   <input type="text" th:field="${dipendente.cognome}" class="form-control" id="cognome" />
+                   <span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+               </div>
 
-		
-		
-		
-		<div>
-			<span><button type="submit">Conferma</button></span>
-		</div>
-	</form>
-</body>
+               <div>
+				   <label for="email">Email:</label>
+                   <input type="text" th:field="${dipendente.email}" class="form-control" id="email" />
+                   <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+               </div>
+
+               <div>
+				   <label for="telefono">Telefono:</label>
+                   <input type="text" th:field="${dipendente.telefono}" class="form-control" id="telefono" />
+                   <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></span>
+               </div>
+
+              <div>
+				  <label for="ruolo">Ruolo:</label>
+                  <input type="text" th:field="${dipendente.ruolo}" class="form-control" id="ruolo" />
+              </div>
+
+              <div>
+				  <label for="image">Immagine:</label>
+                  <input type="file" th:field="${dipendente.image}" class="form-control-file" id="image" />
+              </div>
+
+              <div>
+				  <button type="submit" class="btn btn-primary">Conferma</button>
+              </div>
+           </form>
+        </div>
+
+        
+        <!-- New Dipendente section ends -->
+     </body>
 
 </html>

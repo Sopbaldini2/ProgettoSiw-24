@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dipendenti</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<h1>Dipendenti</h1>
+
+	<div th:if="${dipendenti==null || dipendenti.isEmpty()}">Non ci sono dipendenti nel sistema</div>
+	<ul>
+		<li th:each="dipendente : ${dipendenti}">
+			<span th:text="${dipendente.nome} + ' ' + ${dipendente.cognome}"></span>
+			<span th:text="' - ' + ${dipendente.email}"> </span>
+			<span th:text="' - ' + ${dipendente.telefono}"></span>
+		</li>
+	</ul>
+</body>
+
+</html>

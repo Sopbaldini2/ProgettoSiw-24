@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dipendenti</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+	
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%" /></a></div>
+	<h1>Dipendenti</h1>
+	<div th:if="${dipendenti==null || dipendenti.isEmpty()}"> </div>
+	<ul>
+		<li th:each="dipendente : ${dipendenti}">
+			<span th:text="${dipendente.nome} ">Up</span>
+		<form th:action="@{'/admin/dipendente/' + ${dipendente.id}}" method="get">
+            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo dipendente?');">Elimina</button>
+            </form>
+		</li>
+	</ul>
+	
+</body>
+
+</html>

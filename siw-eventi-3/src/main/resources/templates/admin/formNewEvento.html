@@ -1,61 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi - Aggiungi evento</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/newEvento.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
 
-<head>
-	<title>
-		New Evento
-	</title>
-	<link rel="stylesheet" href="/css/stile.css" />
-</head>
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/evento">Eventi</a>
+			</nav>
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+			</div>			
+			
+			
+		</header>
+		
+        <!-- header section ends -->
+        
+        <!-- nuovo evento starts -->   
+        
+      <div class="evento_main">  
+	    <h1>Aggiungi un evento</h1>
+	    <form th:action="@{/admin/evento}" method="POST" th:object="${evento}">
+			<div th:if="${#fields.hasGlobalErrors()}">
+				<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+  		    </div>
+		
+		    <div class="nome">
+				<label>Nome:</label> 
+			    <span><input type="text" th:field="${evento.nome}" /></span>
+		        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
+		        </span>
+		   </div>
+		
+		   <div class="price">
+			   <label>Prezzo:</label> <span><input type="number" th:field="${evento.prezzo}" /></span>
+		       <span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}">
+		       </span>
+		  </div>
 
-<body>
-	
-	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
-	<h1>Aggiungi un evento</h1>
-	<form th:action="@{/admin/evento}" method="POST" th:object="${evento}">
-  		<div th:if="${#fields.hasGlobalErrors()}">
-  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
-  		</div>
-		
-		<div>
-			<label>Nome:</label> 
-			<span><input type="text" th:field="${evento.nome}" /></span>
-		    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
-		    </span>
-		</div>
-		
-		<div>
-			<label>Prezzo:</label> <span><input type="number" th:field="${evento.prezzo}" /></span>
-		    <span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}">
-		    </span>
-		</div>
+		  <div class="description">
+			  <label>Descrizione:</label> <span><input type="text" th:field="${evento.descrizione}" /></span>
+		      <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}">
+		      </span>
+		 </div>
 
-		<div>
-			<label>Descrizione:</label> <span><input type="text" th:field="${evento.descrizione}" /></span>
-		    <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}">
-		    </span>
-		</div>
-
-		<!--come inserire la foto!-->
-		<div>
-			<label>Tipologia:</label> <span><input type="text" th:field="${evento.tipologia}" /></span>
-		    <span th:if="${#fields.hasErrors('tipologia')}" th:errors="*{tipologia}">
-		    </span>
-		</div>
+		 <div class="tipo">
+			 <label>Tipologia:</label> <span><input type="text" th:field="${evento.tipologia}" /></span>
+		     <span th:if="${#fields.hasErrors('tipologia')}" th:errors="*{tipologia}">
+		     </span>
+		 </div>
 		
-		<div>
-			<label>Data:</label> <span><input type="date" th:field="${evento.data}" /></span>
-		    <span th:if="${#fields.hasErrors('data')}" th:errors="*{data}">
-		    </span>
-		</div>
+		 <div class="data_evento">
+			 <label>Data:</label> <span><input type="date" th:field="${evento.data}" /></span>
+		     <span th:if="${#fields.hasErrors('data')}" th:errors="*{data}">
+		     </span>
+		 </div>
 		
-		<div>
-			<label>Image:</label> <span><input type="file" id="image" name="image" accept="image/png" /></span>
-		
-		<div>
+		 <div>
+			 <label>Image:</label> <span><input type="file" id="image" name="image" accept="image/png" /></span>
+         <div>
+			 
 			<span><button type="submit">Conferma</button></span>
+			
 		</div>
+		
 	</form>
+	
+  </div> 
+  
+  <!-- Nuovo Evento ends -->
+  	
 </body>
 
 </html>

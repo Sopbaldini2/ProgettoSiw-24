@@ -1,0 +1,281 @@
+:root{
+	--pink: #e84393;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition: all .2s ease;
+}
+
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+	overflow-x: hidden;
+	background: rgb(0, 0, 0);
+}
+
+section{
+	padding: 2rem 9%;
+}
+
+.btn{
+	display: inline-block;
+	margin-top: 1rem;
+	border-radius: 5rem;
+	background: #fff;
+	color: #333;
+	padding: .9rem 3.5rem;
+	cursor: pointer;
+	font-size: 1.7rem;
+}
+
+.btn:hover{
+	background: var(--pink) ;
+}
+ 
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgb(0, 0, 0);
+	padding: 2rem 9%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index:1000 ;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0.1);
+}
+
+header .logo{
+	font-size: 3rem;
+	color: #fff;
+	font-weight: bolder;	
+}
+
+header .logo span{
+	color: var(--pink);
+}
+
+header .navbar a{
+	font-size: 2rem;
+	padding: 0 1.5rem;
+	color: #fff;
+}
+
+header .navbar a:hover{
+	color: var(--pink);
+}
+
+header .icons a{
+	font-size: 2.5rem;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 1.5rem;
+}
+
+header .icons a:hover{
+	color: var(--pink);
+}
+
+header #toggler{
+	display: none;
+}
+
+header .fa-bars{
+	font-size: 3rem;
+	color: #fff;
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	cursor: pointer;
+	border: .1rem solid rgb(255, 255, 255);
+	display: none;
+}
+
+/*Update Evento*/
+
+.eventoadd {
+    background-color: #000;
+    color: #fff;
+    padding: 90px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-align: center; /* Centra il contenuto */
+}
+
+.eventoadd h1 {
+    color: var(--pink); /* Rosa */
+    font-size: 3rem; /* Aumenta la dimensione del testo */
+    margin-bottom: 20px; /* Aggiungi spazio sotto */
+}
+
+.evento-info {
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Aumenta la dimensione del testo */
+}
+
+.evento-info label{
+	margin: 10px 0;
+    font-size: 2rem; /* Aumenta la dimensione del testo */
+}
+
+.evento-info p {
+    margin: 10px 0;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo */
+}
+
+.evento-info label span{
+	color: var(--pink); /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 2.2rem; /* Aumenta la dimensione del testo del nome */
+}
+
+.evento-info p span {
+    color: #fff; /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
+}
+
+.evento-info p strong {
+    color: var(--pink); /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
+}
+
+.evento-info .immagine_evento img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Limita l'altezza massima delle immagini */
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+/*Add Servizi*/
+
+.servizi-info {
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+    font-size: 1.8rem; /* Aumenta la dimensione del testo */
+}
+
+.servizi-info h4 {
+    color: #ff69b4; /* Rosa */
+}
+
+.servizi-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.servizi-info li {
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Aumenta la dimensione del testo */
+}
+
+.servizio_image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Limita l'altezza massima delle immagini */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Rosa */
+}
+
+.servizi-info a button {
+    background-color: var(--pink); /* Rosa */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.servizi-info a button:hover {
+    background-color: #ff1493; /* Rosa più scuro al passaggio del mouse */
+}
+
+.servizi-info div {
+    margin-top: 20px;
+}
+
+/* Testo link non visitati */
+a {
+    color: var(--pink); /* Rosa */
+}
+
+/* Testo link visitati */
+a:visited {
+    color: var(--pink); /* Rosa */
+}
+
+/* Stile link al passaggio del mouse */
+a:hover {
+    color: #ff1493; /* Rosa più scuro al passaggio del mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*media queries*/
+
+@media (max-width:991px){
+	html{
+	font-size: 55%;
+	}
+	
+	header{
+		padding: 2rem;
+	}
+}	
+
+	
+@media (max-width:768px){
+	
+	header .fa-bars{
+		display: block;
+	}
+	
+	header .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #eee;
+		border-top: .1rem solid rgb(255, 255, 255);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	
+	header #toggler:checked ~ .navbar {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+	
+	header .navbar a{
+		margin: 1.5rem;
+		padding: 1.5rem;
+		background: #333;
+		border: .1rem solid rgb(255, 255, 255);
+		display: block;
+	}
+}
+
+@media (max-width:450px){
+	html{
+	font-size: 50%;
+	}	
+  }

@@ -100,32 +100,34 @@ header .fa-bars{
 	display: none;
 }
 
-/*New Recensione*/
+/* New Recensione */
 
-.container {
-    flex: 1;
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    padding: 11rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10rem; /* Increased to ensure visibility below navbar */
+    min-height: 100vh;
+}
+
+.container {
+    background: #2c2c2c;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--pink);
+    width: 100%;
+    max-width: 500px;
 }
 
 .container h2 {
-	font-size: 30px;
+    font-size: 30px;
     color: #e84393; /* Ensure the text color is visible */
     text-align: center;
     margin-bottom: 2rem; /* Add some margin at the bottom */
-}
-
-#recensioneForm {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0);
-    backdrop-filter: blur(10px);
 }
 
 .form-group {

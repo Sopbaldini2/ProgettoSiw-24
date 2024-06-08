@@ -35,10 +35,10 @@ public class RecensioneController {
 		return "user/indexRecensione.html";
 	}
 	
-	@GetMapping("/user/manageRecensione")
+	@GetMapping("/admin/manageRecensione")
 	public String manageRecensione(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
-		return "user/manageRecensione.html";
+		return "admin/manageRecensione.html";
 	}
 	
 	@PostMapping("user/recensione")

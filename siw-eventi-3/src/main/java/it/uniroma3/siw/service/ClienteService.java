@@ -56,4 +56,9 @@ public class ClienteService {
             result.add(user);
         return result;
     }
+
+	public Iterable<Cliente> findAll() {
+		return clienteRepository.findAll();
+	}
+	
 }

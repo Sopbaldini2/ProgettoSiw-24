@@ -12,48 +12,56 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 //import it.uniroma3.siw.model.Evento;
 import it.uniroma3.siw.model.Recensione;
+import it.uniroma3.siw.service.ClienteService;
 import it.uniroma3.siw.service.RecensioneService;
 
 @Controller
 public class RecensioneController {
 	@Autowired
 	private RecensioneService recensioneService;
+	
+	@Autowired
+	private ClienteService clienteService;
 
-	@GetMapping(value="/admin/formNewRecensione")
+	@GetMapping(value="/user/formNewRecensione")
 	public String formNewRecensione(Model model) {
 		model.addAttribute("recensione", new Recensione());
-		return "admin/formNewRecensione.html";
+		model.addAttribute("clienti", clienteService.findAll());
+		return "user/formNewRecensione.html";
 	}
 	
-	@GetMapping(value="/admin/indexRecensione")
+	@GetMapping(value="/user/indexRecensione")
 	public String indexRecensione() {
-		return "admin/indexRecensione.html";
+		return "user/indexRecensione.html";
 	}
 	
-	@GetMapping("/admin/manageRecensione")
+	@GetMapping("/user/manageRecensione")
 	public String manageRecensione(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
-		return "admin/manageRecensione.html";
+		return "user/manageRecensione.html";
 	}
 	
-	@PostMapping("/admin/recensione")
+	@PostMapping("user/recensione")
 	public String newRecensione(@ModelAttribute("recensione")Recensione recensione, Model model) {
-		if (!recensioneService.existsById(recensione.getId())) {
+		if (!recensioneService.existsByClienteAndEvento(recensione.getCliente(), recensione.getEvento())) {
 			this.recensioneService.save(recensione); 
 			model.addAttribute("recensione", recensione);
-			return "recensione.html";
+			model.addAttribute("recensioni", recensioneService.findAll());
+			return "recensioni.html";
 		} else {
 			model.addAttribute("messaggioErrore", "Questa recensione esiste già");
-			return "admin/formNewRecensione.html"; 
+			model.addAttribute("recensioni", recensioneService.findAll());
+			return "user/formNewRecensione.html"; 
 		}
 	}
+	
 
 	/*@GetMapping("/recensione/{id}")
 	public String getRecensione(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("recensione", this.recensioneService.findById(id));
 		return "recensione.html";
-	}
-*/
+	}*/
+
 	@GetMapping("/recensione")
 	public String getRecensioni(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
@@ -70,7 +78,7 @@ public class RecensioneController {
         } else {
             // Nel caso in cui la recensione non esista
             model.addAttribute("messaggioErrore", "Recensione non trovato");
-            return "admin/indexRecensione.html";
+            return "user/indexRecensione.html";
             }
         }
 }

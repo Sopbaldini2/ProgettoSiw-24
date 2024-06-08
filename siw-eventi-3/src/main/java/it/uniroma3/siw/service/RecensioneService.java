@@ -3,6 +3,8 @@ package it.uniroma3.siw.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.uniroma3.siw.model.Cliente;
+import it.uniroma3.siw.model.Evento;
 import it.uniroma3.siw.model.Recensione;
 import it.uniroma3.siw.repository.RecensioneRepository;
 
@@ -31,5 +33,9 @@ public class RecensioneService {
 	public Iterable<Recensione> findAll() {
 		return recensioneRepository.findAll();
 	}
+
+	public boolean existsByClienteAndEvento(Cliente cliente, Evento evento) {
+        return recensioneRepository.existsByClienteAndEvento(cliente, evento);
+    }
 
 }

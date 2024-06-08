@@ -16,7 +16,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 public class Recensione {
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	@Column(columnDefinition = "TEXT")
 	@NotBlank(message = "{recensione.commento.notblank}")

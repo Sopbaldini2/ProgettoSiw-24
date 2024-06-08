@@ -1,0 +1,151 @@
+ :root{
+	--pink: #e84393;	
+    --light-pink: #f4a3ba; /* Nuovo colore rosa chiaro */
+    --background-color: #f9f9f9;
+    --primary-color: #fff;
+    --text-color: #000;
+    --box-size: 150px;
+    --gap: 30px; 
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition: .2s linear;
+}
+
+html{
+	font-size: 65%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+	overflow-x: hidden;
+}
+
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgb(0, 0, 0);
+	padding: 2rem 9%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index:1000 ;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0.1);
+}
+
+header .logo{
+	font-size: 3rem;
+	color: #fff;
+	font-weight: bolder;	
+}
+
+header .logo span{
+	color: var(--pink);
+}
+
+header .navbar a{
+	font-size: 2rem;
+	padding: 0 1.5rem;
+	color: #fff;
+}
+
+header .navbar a:hover{
+	color: var(--pink);
+}
+
+header .icons a{
+	font-size: 2.5rem;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 1.5rem;
+}
+
+header .icons a:hover{
+	color: var(--pink);
+}
+
+header #toggler{
+	display: none;
+}
+
+header .fa-bars{
+	font-size: 3rem;
+	color: #fff;
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	cursor: pointer;
+	border: .1rem solid rgb(255, 255, 255);
+	display: none;
+}
+ body {
+    font-family: Arial, sans-serif;
+    background-image: url('/images/banner2.png'); /* Aggiungi l'URL dell'immagine */
+    background-size: cover; /* Copertura dell'immagine su tutta la pagina */
+    background-repeat: no-repeat; /* Nessuna ripetizione dell'immagine */
+    background-attachment: fixed; /* L'immagine rimane fissa durante lo scroll */
+    margin: 0;
+    padding: 0;
+}
+
+.white-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin-top: 300px;
+}
+
+.section {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.container {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 80px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.link-container a {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--pink);
+    padding: 20px;
+    border-radius: 1000px;
+    margin-bottom:var(--gap); 
+    margin-right: 20px;
+    font-weight: bold; 
+    width: 200px; 
+    text-align: center; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.link-container a:hover {
+    background-color: var(--light-pink);
+    transform: scale(1.05);
+}
+

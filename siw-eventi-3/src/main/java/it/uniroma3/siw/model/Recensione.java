@@ -26,6 +26,8 @@ public class Recensione {
 	@Max(5)
 	private Integer voto;
 	
+	private String image;
+	
 	@ManyToOne
 	private Evento evento;
 	
@@ -49,10 +51,13 @@ public class Recensione {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	public String getImage() {
+		return image;
+	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(commento, id, voto);
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	public Long getId() {
@@ -72,6 +77,12 @@ public class Recensione {
 	}
 	public void setVoto(Integer voto) {
 		this.voto = voto;
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(commento, id, voto);
 	}
 	
 	@Override

@@ -379,13 +379,13 @@ header .fa-bars{
 }
 
 .recensione .box-container .box .stars i{
-	color: #999;
+	color: gold;
 	font-size: 1.5rem;
 	line-height: 1.5rem;
 	padding-top: 2rem;
 }
 
-.recensione .box-container .box .stars p{
+.recensione .box-container .box p{
 	color: var(--pink);
 	font-size: 2rem;
 }

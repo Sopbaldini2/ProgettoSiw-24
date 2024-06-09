@@ -20,10 +20,10 @@ insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextva
 insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextval('servizio_seq'), 'Intrattenimento', 'Artisti, musicisti, DJ, animatori e spettacoli per intrattenere gli ospiti.', 2000, 'intrattenimento.png', 'musica.mp4');
 insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextval('servizio_seq'), 'Catering e Ristorazione', 'Fornitura di cibo e bevande per gli ospiti.', 1500, 'catering.png', 'food.mp4');
 insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextval('servizio_seq'), 'Allestimenti e Design', 'Creazione di ambienti, scenografie e allestimenti personalizzati per l’evento.', 1000, 'allestimento.png', 'allestimento.mp4');
-insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Sicurezza', 'Assicurarsi che l''evento sia sicuro e ben gestito, con personale di sicurezza e personale addetto alla gestione degli eventi', 200, 'sicurezza.png', '');
+insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Sicurezza', 'Assicurarsi che l''evento sia sicuro e ben gestito, con personale di sicurezza e personale addetto alla gestione degli eventi', 200, 'sicurezza.png', 'sicurezza.mp4');
 insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Vendita di Biglietti ', 'Gestione della vendita dei biglietti per il concerto e promozione dell''evento, inclusi pacchetti VIP con posti privilegiati', 70, 'ticket.png', 'ticket.mp4');
-insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Noleggio ', 'Noleggio dell''equipaggiamento necessario', 100, 'attrezzatura.png', 'attrezzatura.mp4');
-insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Servizio Di Trasporto', 'Servizio di trasporto per raggiungere il luogo dell''evento', 50, 'bus.png', '');
+insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Noleggio ', 'Noleggio dell''equipaggiamento necessario come macchina per il pop corn o per lo zucchero filato', 100, 'attrezzatura.png', 'attrezzatura.mp4');
+insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Noleggio macchine d''epoca', 'Arriva al tuo evento in grande stile', 100, 'macchina.png', 'macchine.mp4');
 insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Degustazione Privata', 'Servizio di degustazione guidata per esplorare i diversi sapori.', 250, 'degustazione.png', 'degustazioni.mp4');
 
 

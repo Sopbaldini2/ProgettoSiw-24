@@ -1,38 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi - Manage Servzi</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/manageServizi.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
 
-<head>
-	<title>Evento</title>
-	<link rel="stylesheet" href="/css/stile.css" />
-</head>
+			<nav class="navbar">
+				<a href="/admin/indexAdmin">Home</a>
+				<a href="/servizio">Servizi</a>
+			</nav>			
+			
+		</header>
+		
+        <!-- header section ends -->
 
-<body>
-	<header>
-		<div th:if="${userDetails}">
-			<span th:text="${userDetails.username}"></span>
-			<a href="/logout">Logout</a>
-		</div>
-		<div th:unless="${user}">
-			<a href="/login">Login</a>
-		</div>
-	</header>
-
-	<div><a href="/"><img src="/images/logo-siw.png" width="50%" /></a></div>
-	<h1>Servizi</h1>
-	<div th:if="${servizi==null || servizi.isEmpty()}"> </div>
-	<ul>
-		<li th:each="servizio : ${servizi}">
-			<span th:text="${servizio.nome} ">Up</span>
-			<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
-		    <div class="servizio_image">
-				<img th:src="@{'/images/servizi/' + ${servizio.image}}" >
-			</div>
-		<form th:action="@{'/admin/servizio/' + ${servizio.id}}" method="get">
-            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo servizio?');">Elimina</button>
-        </form>
-		</li>
-	</ul>
+	    <!-- Manage servizi section starts -->
+	    
+	    <div class="servizi_main">
+			<h1>Servizi</h1>
+	        <div th:if="${servizi==null || servizi.isEmpty()}"> </div>
+	        <ul>
+				<li th:each="servizio : ${servizi}">
+					<div class="servizio_image">
+						<img th:src="@{'/images/servizi/' + ${servizio.image}}" >
+			        </div>
+			        
+					<span th:text="${servizio.nome} ">Nome del Servizio</span>
+			        <div class="price">
+						<label> Prezzo: </label>
+						<span th:text="'€' + ${servizio.prezzo}"> 20 €</span>
+				    </div>
+		            
+		           <form th:action="@{'/admin/servizio/' + ${servizio.id}}" method="get">
+					   <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo servizio?');">Elimina</button>
+                   </form>
+		       </li>
+	        </ul>
+		</div> 
 	
-</body>
+	    <!-- Manage servizi section ends -->
+	
+    </body>
 
 </html>

@@ -363,11 +363,11 @@ header .fa-bars{
 
 .recensione .box-container .box{
 	flex:1 1 30rem;
-	box-shadow:0 .5rem 1.5rem rgba(0,0,0.1);
+	box-shadow:0 .5rem 1.5rem rgb(204, 0, 122, .2);
 	border-radius: .5rem;
 	padding:3rem 2rem ;
 	position: relative;
-	border: .1rem solid rgba(0,0,0.1);
+	border: .1rem solid rgb(204, 0, 122, .1);
 }
 
 .recensione .box-container .box .fa-quote-right{
@@ -378,20 +378,20 @@ header .fa-bars{
 	color: #eee;
 }
 
-.recensione .box-container .box .stars i{
-	color: gold;
+.recensione .box-container .box p{
+	color: #fff;
 	font-size: 1.5rem;
 	line-height: 1.5rem;
 	padding-top: 2rem;
 }
 
-.recensione .box-container .box p{
+.recensione .box-container .box .starts i{
 	color: var(--pink);
 	font-size: 2rem;
 }
 
 .recensione .box-container .box user{
-	display: var(--pink);
+	display: flex;
 	align-items: center;
 	padding-bottom: 2rem;
 }
@@ -402,11 +402,17 @@ header .fa-bars{
 	border-radius: 50%;
 	object-fit: cover;
 	margin-right:1rem;
+	margin-top: 1rem;
 }
 
 .recensione .box-container .box .user h3{
 	font-size: 2rem;
-	color: #333;
+	color: #999;
+}
+
+.recensione .box-container .box .user span{
+	font-size: 1rem;
+	color: #999;
 }
 
 /*Contatti*/

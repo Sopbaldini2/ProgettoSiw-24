@@ -35,14 +35,14 @@
         <!-- Manage dipendenti section starts -->
         
         <div class="dipendente_main">
-			<h1>Dipendenti</h1>
+			<h1>Performers</h1>
 	        <div th:if="${dipendenti==null || dipendenti.isEmpty()}"> </div>
 	        <ul>
 				<li th:each="dipendente : ${dipendenti}">
 					<div class="dipendente_image">
 						<img th:src="@{'/images/dipendenti/' + ${dipendente.image}}" >
 			        </div>
-					<span th:text="${dipendente.nome} + ' ' + ${dipendente.cognome}">Nome e cognome del dipendente </span>
+					<span th:text="${dipendente.nome} + ' ' + ${dipendente.cognome}">Nome e cognome del performer </span>
 		            <form th:action="@{'/admin/dipendente/' + ${dipendente.id}}" method="get">
 						<button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo dipendente?');">Elimina</button>
                     </form>

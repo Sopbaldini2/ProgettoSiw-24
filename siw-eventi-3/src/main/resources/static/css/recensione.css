@@ -122,6 +122,7 @@ header .fa-bars{
     gap: 1.5rem;
 }
 
+
 .recensione .box-container .box {
     flex: 1 1 30rem;
     box-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.1);
@@ -171,7 +172,6 @@ header .fa-bars{
     font-size: 2rem;
 }
 
-
 /*Footer*/
 
 .footer .box-container{
@@ -180,11 +180,13 @@ header .fa-bars{
 	gap: 1.5rem;
 }
 
-.footer .box-container .box{
+.footer .box-container .box,
+.footer .box-container .box2{
 	flex:1 1 25rem;
 }
 
-.footer .box-container .box h3{
+.footer .box-container .box h3,
+.footer .box-container .box2 h3{
 	color: #fff;
 	font-size: 2.5rem;
 	padding: 1rem 0;
@@ -206,6 +208,18 @@ header .fa-bars{
 	margin-top: 1rem;
 }
 
+.footer .box-container .box2 i{
+	margin-top: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.footer .box-container .box2 i:hover{
+	color: var(--pink);
+}
+
 .footer .credit{
 	text-align: center;
 	padding: 1.5rem;
@@ -219,7 +233,6 @@ header .fa-bars{
 .footer .credit span{
 	color: var(--pink);
 }
-
 
 
 

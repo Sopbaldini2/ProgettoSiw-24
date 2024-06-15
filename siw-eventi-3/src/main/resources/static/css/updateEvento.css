@@ -1,5 +1,5 @@
 :root{
-	--pink: #e84393;
+	--pink: #e84393;	
 }
 
 *{
@@ -10,7 +10,7 @@
 	outline: none;
 	border: none;
 	text-decoration: none;
-	transition: all .2s ease;
+	transition: .2s linear;
 }
 
 html{
@@ -23,6 +23,20 @@ html{
 
 section{
 	padding: 2rem 9%;
+}
+
+.heading {
+	text-align: center;
+	font-size: 4rem;
+	color: #fff;
+	padding: 1rem;
+	margin: 2rem 0;
+	background: rgba(255, 51, 153, .05);
+}
+
+
+.heading span{
+	color: var(--pink);
 }
 
 .btn{
@@ -100,6 +114,7 @@ header .fa-bars{
 	display: none;
 }
 
+
 /*Update Evento*/
 
 .eventoadd {
@@ -112,9 +127,13 @@ header .fa-bars{
 }
 
 .eventoadd h1 {
-    color: var(--pink); /* Rosa */
+    color: #fff; /* Rosa */
     font-size: 3rem; /* Aumenta la dimensione del testo */
     margin-bottom: 20px; /* Aggiungi spazio sotto */
+}
+
+.eventoadd h1 span{
+	color: var(--pink);
 }
 
 .evento-info {

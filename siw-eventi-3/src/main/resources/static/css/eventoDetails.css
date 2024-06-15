@@ -100,67 +100,142 @@ header .fa-bars{
 	display: none;
 }
 
+
+
+
 /*Title*/
 
-.eventi_section h1 {
+.eventi_section {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    background-color: #1a1a1a;
+    color: #fff;
+    max-width: 1200px;
+    margin: 100px auto;
     text-align: center;
-	font-size: 4rem;
-	color: #fff;
-	padding: 5rem;
-	margin: 4rem 0;
+}
+
+.eventi_section h1 {
+    color: #fff;
+    font-size: 4rem;
+    margin-bottom: 20px;
 }
 
 .eventi_section h1 span {
-    color: var(--pink);
+    color: var(--pink); /* Colore rosa per la parola Evento */
 }
 
-/* Dettagli Eventi */
-
-.eventi_details {
-    text-align: center;
-    margin-bottom: 20%;
+.evento-info {
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Aumenta la dimensione del testo */
 }
 
-.eventi_details img {
-    display: block;
-    margin: 0 auto;
-    width: 50%; 
-    max-width: 300px; 
+.evento-info label{
+	margin: 10px 0;
+    font-size: 2rem; /* Aumenta la dimensione del testo */
 }
 
-.eventi_details .titolo {
-    margin-top: 20px;
-    color: #e84393;
-    font-style: italic;
+.evento-info p {
+    margin: 10px 0;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo */
 }
 
-.eventi_details .titolo span {
+.evento-info label span{
+	color: var(--pink); /* Colore rosa per il nome dell'evento */
     font-weight: bold;
-    font-size: 32px; /* Aumento della dimensione del testo */
-    display: block; /* Per distanziare ulteriormente il titolo dal resto */
+    font-size: 2.2rem; /* Aumenta la dimensione del testo del nome */
 }
 
-.eventi_details .data,
-.eventi_details .price,
-.eventi_details .tipologia,
-.eventi_details .caratteristiche {
-    margin-top: 10px;
+.evento-info p span {
+    color: #fff; /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
+}
+
+.evento-info p strong {
+    color: var(--pink); /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
+}
+
+.evento-info .immagine_evento img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Limita l'altezza massima delle immagini */
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+/*Add Servizi*/
+
+.servizi-info {
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+    font-size: 1.8rem; /* Aumenta la dimensione del testo */
+}
+
+.servizi-info h4 {
+    color: #ff69b4; /* Rosa */
+}
+
+.servizi-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.servizi-info li {
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Aumenta la dimensione del testo */
+}
+
+.servizi-info p strong {
+    color: var(--pink); /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
+}
+
+.servizio_image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Limita l'altezza massima delle immagini */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Rosa */
+}
+
+.servizi-info a button {
+    background-color: var(--pink); /* Rosa */
     color: #fff;
-    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.eventi_details .data span,
-.eventi_details .price span,
-.eventi_details .tipologia span,
-.eventi_details .caratteristiche span {
-    font-size: 18px;
+.servizi-info a button:hover {
+    background-color: #ff1493; /* Rosa più scuro al passaggio del mouse */
 }
 
-.eventi_details .caratteristiche label{
-	font-weight: bold;
-	font-size: 18px;
-	color: rgb(238, 17, 221);
+.servizi-info div {
+    margin-top: 20px;
 }
+
+/* Testo link non visitati */
+a {
+    color: var(--pink); /* Rosa */
+}
+
+/* Testo link visitati */
+a:visited {
+    color: var(--pink); /* Rosa */
+}
+
+/* Stile link al passaggio del mouse */
+a:hover {
+    color: #ff1493; /* Rosa più scuro al passaggio del mouse */
+}
+
 
 /*Footer*/
 

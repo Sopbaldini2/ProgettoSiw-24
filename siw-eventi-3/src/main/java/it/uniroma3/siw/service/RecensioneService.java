@@ -14,7 +14,6 @@ public class RecensioneService {
 	private RecensioneRepository recensioneRepository;
 	
 	public void save(Recensione recensione) {
-		// TODO Auto-generated method stub
 		recensioneRepository.save(recensione);
 	}
 

@@ -33,16 +33,22 @@
 			
 			<div class="icons">
 				<a href="/formSearchEventi" class="fas fa-search"></a>
-				<div class="dropdown">
-					<a class="fas fa-user"></a>
-					<div class="dropdown-content">
-						<a href="/login">Login</a>
-                        <a href="/register">Register</a>
-                        <a href="/profile">Profile</a>
+				<div class="dropdown" id="userDropdown">
+					<span class="user-icon fas fa-user"></span>
+                    <div class="dropdown-content" id="dropdownContent">
+						<div class="user-info">
+							<!-- Mostra il nome utente dinamicamente -->
+							
+                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+                        </div>
+                        <!-- Link per il profilo utente, impostazioni, logout, etc. -->
+                        <a href="/profile">Profilo</a>
+                        <a href="user/indexRecensione">Recensione</a>
                         <a href="/logout">Logout</a>
-                   </div>
-                </div>
-			</div>			
+                    </div>
+                    <div class="arrow-down"></div>
+               </div>
+            </div>			
 			
 			
 		</header>

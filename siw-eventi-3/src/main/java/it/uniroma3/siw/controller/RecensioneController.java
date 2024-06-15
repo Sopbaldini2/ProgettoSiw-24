@@ -23,11 +23,11 @@ public class RecensioneController {
 	@Autowired
 	private ClienteService clienteService;
 
-	@GetMapping(value="/user/formNewRecensione")
+	@GetMapping(value="/cliente/formNewRecensione")
 	public String formNewRecensione(Model model) {
 		model.addAttribute("recensione", new Recensione());
 		model.addAttribute("clienti", clienteService.findAll());
-		return "user/formNewRecensione.html";
+		return "cliente/formNewRecensione.html";
 	}
 	
 	@GetMapping(value="/user/indexRecensione")
@@ -41,7 +41,7 @@ public class RecensioneController {
 		return "admin/manageRecensione.html";
 	}
 	
-	@PostMapping("user/recensione")
+	@PostMapping("cliente/recensione")
 	public String newRecensione(@ModelAttribute("recensione")Recensione recensione, Model model) {
 		if (!recensioneService.existsByClienteAndEvento(recensione.getCliente(), recensione.getEvento())) {
 			this.recensioneService.save(recensione); 
@@ -51,7 +51,7 @@ public class RecensioneController {
 		} else {
 			model.addAttribute("messaggioErrore", "Questa recensione esiste già");
 			model.addAttribute("recensioni", recensioneService.findAll());
-			return "user/formNewRecensione.html"; 
+			return "cliente/formNewRecensione.html"; 
 		}
 	}
 	

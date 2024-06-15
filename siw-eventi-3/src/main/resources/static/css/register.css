@@ -12,6 +12,9 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: url(/images/Matrimonio33.png);
     background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed; 
     color: #fff;
 }
 
@@ -28,7 +31,7 @@ body .logo span {
 
 .wrapper {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 10vh auto;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.6); /* Rendiamo leggermente più trasparente */
     border-radius: 10px;
@@ -134,4 +137,104 @@ span[th\:errors] {
 
 .google-btn i, .facebook-btn i {
     margin-right: 10px;
+}
+
+
+
+
+
+/*media queries*/
+
+@media (max-width: 991px) {
+    .wrapper {
+        max-width: 80%;
+        padding: 1rem;
+    }
+
+    body .logo {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.6rem;
+    }
+
+    .google-btn, .facebook-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        max-width: 90%;
+        padding: 1rem;
+    }
+
+    body .logo {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .google-btn, .facebook-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .wrapper {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+
+    body .logo {
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .google-btn, .facebook-btn {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
 }

@@ -23,7 +23,7 @@ public class RecensioneController {
 	@Autowired
 	private ClienteService clienteService;
 
-	@GetMapping(value="/user/formNewRecensione")
+	@GetMapping(value="/cliente/formNewRecensione")
 	public String formNewRecensione(Model model) {
 		model.addAttribute("recensione", new Recensione());
 		model.addAttribute("clienti", clienteService.findAll());
@@ -51,7 +51,7 @@ public class RecensioneController {
 		} else {
 			model.addAttribute("messaggioErrore", "Questa recensione esiste già");
 			model.addAttribute("recensioni", recensioneService.findAll());
-			return "user/formNewRecensione.html"; 
+			return "cliente/formNewRecensione.html"; 
 		}
 	}
 	

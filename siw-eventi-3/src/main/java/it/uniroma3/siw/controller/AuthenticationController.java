@@ -64,7 +64,7 @@ public class AuthenticationController {
     	if (credentials.getRuolo().equals(Credentials.ADMIN_ROLE)) {
             return "admin/indexAdmin.html";
         }
-        return "index.html";
+        return "cliente/indexUser.html";
     }
 
 	@PostMapping(value = { "/register" })

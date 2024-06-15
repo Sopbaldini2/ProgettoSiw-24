@@ -180,6 +180,12 @@ header .fa-bars{
     font-size: 1.8rem; /* Aumenta la dimensione del testo */
 }
 
+.servizi-info p strong {
+    color: var(--pink); /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
+}
+
 .servizio_image img {
     max-width: 100%;
     height: auto;

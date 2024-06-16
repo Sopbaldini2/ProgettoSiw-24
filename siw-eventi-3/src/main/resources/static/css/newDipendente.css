@@ -100,6 +100,101 @@ header .fa-bars{
 	display: none;
 }
 
+/* Dropdown per admin nell'header */
+
+header .icons .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+/* Stile per l'icona dell'utente nel dropdown */
+
+header .icons .dropdown .user-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem; /* Aggiungi spazio sotto l'icona */
+}
+
+/* Cambia il colore dell'icona al passaggio del mouse */
+
+header .icons .dropdown .user-icon:hover {
+    color: var(--pink);
+}
+
+/* Stile per il contenitore del nome utente */
+
+header .icons .dropdown .user-info {
+    text-align: center;
+    font-size: 2.7rem; /* Dimensione più grande per il nome utente */
+    font-style: italic; /* Stile italico per il nome utente */
+    margin-bottom: 1.5rem; /* Spazio sotto il nome utente */
+}
+
+/* Linea separatoria sotto il nome utente */
+
+header .icons .dropdown .user-info::after {
+    content: '';
+    display: block;
+    width: 50%;
+    margin: 0.5rem auto;
+    border-bottom: 1px solid #ccc; /* Colore e stile della linea */
+}
+
+/* Stile per il contenitore delle opzioni nel dropdown */
+
+header .icons .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    top: calc(100% + 1rem); /* Posiziona il dropdown sotto l'icona */
+    left: 50%; /* Centra orizzontalmente il dropdown */
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease; /* Aggiungi transizione per l'opacità */
+    opacity: 0;
+    text-align: center;
+}
+
+/* Stile per le opzioni nel dropdown */
+
+header .icons .dropdown-content a {
+    color: #333;
+    padding: 0.8rem 1rem; /* Padding per le opzioni */
+    display: block;
+    text-align: center;
+    text-decoration: none; /* Rimuovi sottolineatura dai link */
+    font-size: 1.2rem; /* Dimensione più piccola per le opzioni */
+}
+
+/* Cambia il colore di sfondo e testo al passaggio del mouse sui link */
+
+header .icons .dropdown-content a:hover {
+    background-color: var(--pink);
+    color: #fff;
+}
+
+/* Mostra il dropdown quando l'icona è in hover */
+
+/* Mostra il dropdown quando l'icona è in hover o il dropdown è in hover */
+header .icons .dropdown:hover .dropdown-content,
+header .icons .dropdown-content:hover {
+    display: block;
+    opacity: 1;
+}
+
+/* Imposta una larghezza fissa per il dropdown content */
+header .icons .dropdown-content {
+    width: 200px; /* Imposta una larghezza fissa */
+}
+
+
 /*New Dipendente*/
 
 .dipendente_main {

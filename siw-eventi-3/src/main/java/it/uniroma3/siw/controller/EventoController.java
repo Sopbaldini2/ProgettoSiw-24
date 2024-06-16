@@ -152,11 +152,11 @@ public class EventoController {
 	
 	
 	
-	@GetMapping("/admin/evento/{id}")
+	@PostMapping("/admin/evento/{id}/delete")
   public String deleteEvento(@PathVariable("id") Long id, Model model) {
       Evento Evento = eventoService.findById(id);
       if (Evento != null) {
-          eventoService.delete(Evento);
+          eventoService.deleteById(id);
           // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
           return "redirect:/evento";
       } else {

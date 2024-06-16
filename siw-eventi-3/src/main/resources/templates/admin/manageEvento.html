@@ -67,7 +67,7 @@
 						<form th:action="@{'/admin/formUpdateEvento/' + ${evento.id}}" method="get">
 							<button type="submit" class="btn">Aggiorna</button>
                         </form>
-                        <form th:action="@{'/admin/evento/' + ${evento.id}}" method="get" onsubmit="return confirm('Sei sicuro di voler eliminare questo evento?');">
+                        <form th:action="@{'/admin/evento/' + ${evento.id}+ '/delete'}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare questo evento?');">
 							<button type="submit" class="btn">Elimina</button>
                         </form>
                    </div>

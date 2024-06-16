@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.siw.model.Evento;
 import it.uniroma3.siw.repository.EventoRepository;
@@ -33,8 +34,10 @@ public class EventoService {
 		return eventoRepository.findByNome(nome);
 	}
 
-	public void delete(Evento evento) {
-		// TODO Auto-generated method stub
+	@Transactional
+	public void deleteById(Long id) {
+		Evento evento= findById(id);
+		eventoRepository.deleteReferencesInRecensione(id);
 		eventoRepository.delete(evento);
 	}
 }

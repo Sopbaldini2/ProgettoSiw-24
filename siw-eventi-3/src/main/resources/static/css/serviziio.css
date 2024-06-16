@@ -288,7 +288,7 @@ header .icons .dropdown-content {
 	display: block;
 	font-size: 1.5rem;
 	margin-bottom: 0.5rem;
-	color: rgb(255, 255, 255); /* Colore del testo del label */
+	color: var(--pink); /* Colore del testo del label */
 }
 
 .servizi .box-container  .content .form-group1 input,
@@ -380,9 +380,6 @@ header .icons .dropdown-content {
 .footer .credit span{
 	color: var(--pink);
 }
-
-
-
 
 
 

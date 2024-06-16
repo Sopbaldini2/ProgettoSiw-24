@@ -1,5 +1,5 @@
 :root{
-	--pink: #e84393;
+	--pink: #e84393;	
 }
 
 *{
@@ -10,7 +10,7 @@
 	outline: none;
 	border: none;
 	text-decoration: none;
-	transition: all .2s ease;
+	transition: .2s linear;
 }
 
 html{
@@ -75,6 +75,11 @@ header .navbar a:hover{
 	color: var(--pink);
 }
 
+header .icons {
+    display: flex;
+    align-items: center;
+}
+
 header .icons a{
 	font-size: 2.5rem;
 	color: #fff;
@@ -100,12 +105,14 @@ header .fa-bars{
 	display: none;
 }
 
-/* Dropdown per admin nell'header */
+
+header .icons a,
+header .icons .dropdown {
+    margin-right: 1.5rem; /* Spaziatura orizzontale tra le icone */
+}
 
 header .icons .dropdown {
     position: relative;
-    display: inline-block;
-    margin-right: 1.5rem;
 }
 
 /* Stile per l'icona dell'utente nel dropdown */
@@ -193,6 +200,7 @@ header .icons .dropdown-content:hover {
 header .icons .dropdown-content {
     width: 200px; /* Imposta una larghezza fissa */
 }
+
 
 
 /*New Servizio*/

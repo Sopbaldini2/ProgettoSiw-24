@@ -104,8 +104,6 @@ header .fa-bars{
 	display: none;
 }
 
-/* Dropdown per admin nell'header */
-
 header .icons a,
 header .icons .dropdown {
     margin-right: 1.5rem; /* Spaziatura orizzontale tra le icone */

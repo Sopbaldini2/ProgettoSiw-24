@@ -25,20 +25,6 @@ section{
 	padding: 2rem 9%;
 }
 
-.heading {
-	text-align: center;
-	font-size: 4rem;
-	color: #fff;
-	padding: 1rem;
-	margin: 2rem 0;
-	background: rgba(255, 51, 153, .05);
-}
-
-
-.heading span{
-	color: var(--pink);
-}
-
 .btn{
 	display: inline-block;
 	margin-top: 1rem;
@@ -53,7 +39,6 @@ section{
 .btn:hover{
 	background: var(--pink) ;
 }
- 
 
 header{
 	position: fixed;
@@ -113,7 +98,6 @@ header .fa-bars{
 	border: .1rem solid rgb(255, 255, 255);
 	display: none;
 }
-
 
 /* Dropdown per admin nell'header */
 
@@ -208,7 +192,6 @@ header .icons .dropdown-content:hover {
 header .icons .dropdown-content {
     width: 200px; /* Imposta una larghezza fissa */
 }
-
 
 /*Update Evento*/
 
@@ -326,26 +309,8 @@ header .icons .dropdown-content {
     margin-top: 20px;
 }
 
-/* Testo link non visitati */
-a {
-    color: var(--pink); /* Rosa */
-}
-
-/* Testo link visitati */
-a:visited {
-    color: var(--pink); /* Rosa */
-}
-
-/* Stile link al passaggio del mouse */
-a:hover {
-    color: #ff1493; /* Rosa più scuro al passaggio del mouse */
-}
-
-
-
-
-
 /*recensioni*/
+
 .recensioni-info {
     border-top: 1px solid #fff;
     padding-top: 20px;
@@ -362,7 +327,6 @@ a:hover {
     flex-wrap: wrap;
     gap: 1.5rem;
 }
-
 
 .recensione .box-container .box {
     flex: 1 1 30rem;

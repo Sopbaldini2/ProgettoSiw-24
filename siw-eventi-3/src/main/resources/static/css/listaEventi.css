@@ -120,13 +120,12 @@ header .fa-bars{
 }
 
 
-header .icons a,
-header .icons .dropdown {
-    margin-right: 1.5rem; /* Spaziatura orizzontale tra le icone */
-}
+/* Dropdown per admin nell'header */
 
 header .icons .dropdown {
     position: relative;
+    display: inline-block;
+    margin-right: 1.5rem;
 }
 
 /* Stile per l'icona dell'utente nel dropdown */
@@ -214,6 +213,7 @@ header .icons .dropdown-content:hover {
 header .icons .dropdown-content {
     width: 200px; /* Imposta una larghezza fissa */
 }
+
 
 /* Lista Eventi */
 

@@ -25,20 +25,6 @@ section{
 	padding: 2rem 9%;
 }
 
-.heading {
-	text-align: center;
-	font-size: 4rem;
-	color: #fff;
-	padding: 1rem;
-	margin: 2rem 0;
-	background: rgba(255, 51, 153, .05);
-}
-
-
-.heading span{
-	color: var(--pink);
-}
-
 .btn{
 	display: inline-block;
 	margin-top: 1rem;
@@ -119,13 +105,13 @@ header .fa-bars{
 	display: none;
 }
 
-
-/* Dropdown per admin nell'header */
+header .icons a,
+header .icons .dropdown {
+    margin-right: 1.5rem; /* Spaziatura orizzontale tra le icone */
+}
 
 header .icons .dropdown {
     position: relative;
-    display: inline-block;
-    margin-right: 1.5rem;
 }
 
 /* Stile per l'icona dell'utente nel dropdown */
@@ -213,6 +199,7 @@ header .icons .dropdown-content:hover {
 header .icons .dropdown-content {
     width: 200px; /* Imposta una larghezza fissa */
 }
+
 
 
 /* Lista Eventi */

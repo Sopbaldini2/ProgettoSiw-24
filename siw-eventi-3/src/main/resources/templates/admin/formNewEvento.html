@@ -30,7 +30,19 @@
 			
 			<div class="icons">
 				<a href="/formSearchEventi" class="fas fa-search"></a>
-				<a href="/login" class="fas fa-user"></a>
+				<div class="dropdown" id="userDropdown">
+					<span class="user-icon fas fa-user"></span>
+                    <div class="dropdown-content" id="dropdownContent">
+						<div class="user-info">
+							<!-- Mostra il nome admin dinamicamente -->
+							
+                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+                        </div>
+                        <!-- Link per logout admin -->
+                        <a href="/logout">Logout</a>
+                    </div>
+                    <div class="arrow-down"></div>
+               </div>
 			</div>			
 			
 			

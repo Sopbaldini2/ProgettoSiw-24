@@ -116,10 +116,13 @@ header .fa-bars{
 
 /* Dropdown per admin nell'header */
 
+header .icons a,
+header .icons .dropdown {
+    margin-right: 1.5rem; /* Spaziatura orizzontale tra le icone */
+}
+
 header .icons .dropdown {
     position: relative;
-    display: inline-block;
-    margin-right: 1.5rem;
 }
 
 /* Stile per l'icona dell'utente nel dropdown */

@@ -164,6 +164,6 @@ public class EventoController {
           model.addAttribute("messaggioErrore", "Evento non trovato");
           return "admin/indexEvento.html";
           }
-      }
+      }	
 	
 }

@@ -25,7 +25,7 @@
 
 			<nav class="navbar">
 				<a href="/">Home</a>
-				<a href="/about">About Us</a>
+				<a href="/aboutUs">About Us</a>
 			</nav>	
 			
 			<div class="icons">
@@ -67,7 +67,7 @@
 						<h3 th:text="${recensione.cliente.nome}">Giovanni</h3>
                     </div>
                     
-		            <form th:action="@{'/admin/recensione/' + ${recensione.id}}" method="get">
+		            <form th:action="@{'/user/recensione/' + ${recensione.id}}" method="get">
 						<button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa recensione?');">Elimina</button>
                     </form>
 		       </li>

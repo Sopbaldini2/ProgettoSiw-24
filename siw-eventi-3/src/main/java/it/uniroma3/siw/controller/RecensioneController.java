@@ -35,10 +35,10 @@ public class RecensioneController {
 		return "user/indexRecensione.html";
 	}
 	
-	@GetMapping("/admin/manageRecensione")
+	@GetMapping("/user/manageRecensione")
 	public String manageRecensione(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
-		return "admin/manageRecensione.html";
+		return "user/manageRecensione.html";
 	}
 	
 	@PostMapping("cliente/recensione")
@@ -56,19 +56,13 @@ public class RecensioneController {
 	}
 	
 
-	/*@GetMapping("/recensione/{id}")
-	public String getRecensione(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("recensione", this.recensioneService.findById(id));
-		return "recensione.html";
-	}*/
-
 	@GetMapping("/recensione")
 	public String getRecensioni(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
 		return "recensioni.html";
 	}
 	
-	@GetMapping("/admin/recensione/{id}")
+	@GetMapping("/user/recensione/{id}")
     public String deleteRecensione(@PathVariable("id") Long id, Model model) {
         Recensione recensione = recensioneService.findById(id);
         if (recensione != null) {

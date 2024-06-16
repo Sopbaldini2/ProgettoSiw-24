@@ -40,7 +40,6 @@ section{
 	background: var(--pink) ;
 }
  
-
 header{
 	position: fixed;
 	top: 0;
@@ -73,6 +72,11 @@ header .navbar a{
 
 header .navbar a:hover{
 	color: var(--pink);
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
 }
 
 header .icons a{
@@ -197,8 +201,6 @@ header .icons .dropdown-content {
     width: 200px; /* Imposta una larghezza fissa */
 }
 
-
-
 /*Title*/
 
 .eventi_section {
@@ -250,9 +252,9 @@ header .icons .dropdown-content {
 }
 
 .evento-info p strong {
-    color: var(--pink); /* Colore rosa per il nome dell'evento */
+    color: var(--pink); 
     font-weight: bold;
-    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
+    font-size: 1.5rem; 
 }
 
 .evento-info .immagine_evento img {
@@ -317,24 +319,8 @@ header .icons .dropdown-content {
     margin-top: 20px;
 }
 
-/* Testo link non visitati */
-a {
-    color: var(--pink); /* Rosa */
-}
-
-/* Testo link visitati */
-a:visited {
-    color: var(--pink); /* Rosa */
-}
-
-/* Stile link al passaggio del mouse */
-a:hover {
-    color: #ff1493; /* Rosa più scuro al passaggio del mouse */
-}
-
-
-
 /*recensioni*/
+
 .recensioni-info {
     border-top: 1px solid #fff;
     padding-top: 20px;
@@ -401,9 +387,6 @@ a:hover {
 .recensione .box-container .box .user h3 {
     font-size: 2rem;
 }
-
-
-
 
 /*Footer*/
 

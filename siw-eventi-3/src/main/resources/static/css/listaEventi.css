@@ -119,7 +119,6 @@ header .fa-bars{
 	display: none;
 }
 
-<<<<<<< HEAD
 header .icons a,
 header .icons .dropdown {
     margin-right: 1.5rem; /* Spaziatura orizzontale tra le icone */
@@ -214,7 +213,6 @@ header .icons .dropdown-content:hover {
 header .icons .dropdown-content {
     width: 200px; /* Imposta una larghezza fissa */
 }
-=======
 
 /* Dropdown per admin nell'header */
 
@@ -309,8 +307,6 @@ header .icons .dropdown-content:hover {
 header .icons .dropdown-content {
     width: 200px; /* Imposta una larghezza fissa */
 }
-
->>>>>>> branch 'main' of https://github.com/Sopbaldini2/ProgettoSiw-24.git
 
 /* Lista Eventi */
 

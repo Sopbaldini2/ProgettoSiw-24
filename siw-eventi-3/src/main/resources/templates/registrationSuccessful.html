@@ -21,7 +21,7 @@
 			
 		<header>
 			
-			<a href="/" class="logo"> Marik'<span>Events</span></a>
+			<a th:href="${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}" class="logo"> Marik'<span>Events</span></a>
 
 		</header>
 		

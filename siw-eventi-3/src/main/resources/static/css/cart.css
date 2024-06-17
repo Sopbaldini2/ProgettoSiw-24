@@ -1,0 +1,416 @@
+:root{
+	--pink: #e84393;	
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition: .2s linear;
+}
+
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+	overflow-x: hidden;
+	background: rgb(0, 0, 0);
+}
+
+section{
+	padding: 2rem 9%;
+}
+
+.btn{
+	display: inline-block;
+	margin-top: 1rem;
+	border-radius: 5rem;
+	background: #fff;
+	color: #333;
+	padding: .9rem 3.5rem;
+	cursor: pointer;
+	font-size: 1.7rem;
+}
+
+.btn:hover{
+	background: var(--pink) ;
+}
+ 
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgb(0, 0, 0);
+	padding: 2rem 9%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index:1000 ;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0.1);
+}
+
+header .logo{
+	font-size: 3rem;
+	color: #fff;
+	font-weight: bolder;	
+}
+
+header .logo span{
+	color: var(--pink);
+}
+
+header .navbar a{
+	font-size: 2rem;
+	padding: 0 1.5rem;
+	color: #fff;
+}
+
+header .navbar a:hover{
+	color: var(--pink);
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
+}
+
+header .icons a{
+	font-size: 2.5rem;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 1.5rem;
+}
+
+header .icons a:hover{
+	color: var(--pink);
+}
+
+header #toggler{
+	display: none;
+}
+
+header .fa-bars{
+	font-size: 3rem;
+	color: #fff;
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	cursor: pointer;
+	border: .1rem solid rgb(255, 255, 255);
+	display: none;
+}
+
+/* Dropdown per admin nell'header */
+
+header .icons a,
+header .icons .dropdown {
+    margin-right: 1.5rem; /* Spaziatura orizzontale tra le icone */
+}
+
+header .icons .dropdown {
+    position: relative;
+}
+
+/* Stile per l'icona dell'utente nel dropdown */
+
+header .icons .dropdown .user-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem; /* Aggiungi spazio sotto l'icona */
+}
+
+/* Cambia il colore dell'icona al passaggio del mouse */
+
+header .icons .dropdown .user-icon:hover {
+    color: var(--pink);
+}
+
+/* Stile per il contenitore del nome utente */
+
+header .icons .dropdown .user-info {
+    text-align: center;
+    font-size: 2.7rem; /* Dimensione più grande per il nome utente */
+    font-style: italic; /* Stile italico per il nome utente */
+    margin-bottom: 1.5rem; /* Spazio sotto il nome utente */
+}
+
+/* Linea separatoria sotto il nome utente */
+
+header .icons .dropdown .user-info::after {
+    content: '';
+    display: block;
+    width: 50%;
+    margin: 0.5rem auto;
+    border-bottom: 1px solid #ccc; /* Colore e stile della linea */
+}
+
+/* Stile per il contenitore delle opzioni nel dropdown */
+
+header .icons .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    top: calc(100% + 1rem); /* Posiziona il dropdown sotto l'icona */
+    left: 50%; /* Centra orizzontalmente il dropdown */
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease; /* Aggiungi transizione per l'opacità */
+    opacity: 0;
+    text-align: center;
+}
+
+/* Stile per le opzioni nel dropdown */
+
+header .icons .dropdown-content a {
+    color: #333;
+    padding: 0.8rem 1rem; /* Padding per le opzioni */
+    display: block;
+    text-align: center;
+    text-decoration: none; /* Rimuovi sottolineatura dai link */
+    font-size: 1.2rem; /* Dimensione più piccola per le opzioni */
+}
+
+/* Cambia il colore di sfondo e testo al passaggio del mouse sui link */
+
+header .icons .dropdown-content a:hover {
+    background-color: var(--pink);
+    color: #fff;
+}
+
+/* Mostra il dropdown quando l'icona è in hover */
+
+/* Mostra il dropdown quando l'icona è in hover o il dropdown è in hover */
+header .icons .dropdown:hover .dropdown-content,
+header .icons .dropdown-content:hover {
+    display: block;
+    opacity: 1;
+}
+
+/* Imposta una larghezza fissa per il dropdown content */
+header .icons .dropdown-content {
+    width: 200px; /* Imposta una larghezza fissa */
+}
+
+/*cart*/
+
+.container {
+    max-width: 1200px;
+    margin: 12rem auto;
+    padding: 9rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--pink);
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.container p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.container p span {
+    color: var(--pink);
+    font-weight: bold;
+}
+
+.container .table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+}
+
+.container .table thead {
+    background: var(--pink);
+    color: #fff;
+}
+
+.container .table thead th {
+    padding: 1rem;
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+.container .table tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.container .table tbody td {
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+
+.container .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container .btn-primary {
+    background-color: var(--pink);
+    color: #fff;
+}
+
+.container .btn-primary:hover {
+    background-color: #d63384;
+}
+
+.container .btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.container .btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.container h3 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: right;
+    color: var(--pink);
+}
+
+/*Footer*/
+
+.footer .box-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.footer .box-container .box,
+.footer .box-container .box2{
+	flex:1 1 25rem;
+}
+
+.footer .box-container .box h3,
+.footer .box-container .box2 h3{
+	color: #fff;
+	font-size: 2.5rem;
+	padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+	display: block;
+	color: #666;
+	font-size: 1.5rem;
+	padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+	color: var(--pink);
+	text-decoration:underline ;
+}
+
+.footer .box-container .box img{
+	margin-top: 1rem;
+}
+
+.footer .box-container .box2 i{
+	margin-top: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.footer .box-container .box2 i:hover{
+	color: var(--pink);
+}
+
+
+.footer .credit{
+	text-align: center;
+	padding: 1.5rem;
+	margin-top: 1.5rem;
+	padding-top: 2.5rem;
+	font-size: 2rem;
+	color:rgb(255, 255, 255);
+	border-top: .1rem solid rgb(255, 255, 255);
+}
+
+.footer .credit span{
+	color: var(--pink);
+}
+
+
+
+
+
+
+/*media queries*/
+
+@media (max-width:991px){
+	html{
+	font-size: 55%;
+	}
+	
+	header{
+		padding: 2rem;
+	}
+}	
+
+	
+@media (max-width:768px){
+	
+	header .fa-bars{
+		display: block;
+	}
+	
+	header .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #eee;
+		border-top: .1rem solid rgb(255, 255, 255);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	
+	header #toggler:checked ~ .navbar {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+	
+	header .navbar a{
+		margin: 1.5rem;
+		padding: 1.5rem;
+		background: #333;
+		border: .1rem solid rgb(255, 255, 255);
+		display: block;
+	}
+}
+
+@media (max-width:450px){
+	html{
+	font-size: 50%;
+	}	
+  }

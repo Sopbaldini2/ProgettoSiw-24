@@ -40,7 +40,7 @@ public class RecensioneController {
 	@GetMapping("/admin/manageRecensione")
 	public String manageRecensione(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
-		return "adimn/manageRecensione.html";
+		return "admin/manageRecensione.html";
 	}
 	
 	

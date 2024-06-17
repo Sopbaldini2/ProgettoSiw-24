@@ -57,7 +57,7 @@ public class RecensioneController {
         Recensione recensione = recensioneService.findById(id);
         if (recensione != null) {
             recensioneService.delete(recensione);
-            // Redirect alla pagina dell'indice delle recensioni dopo la cancellazione
+            /* Redirect alla pagina dell'indice delle recensioni dopo la cancellazione*/
             return "redirect:/recensione";
         } else {
             // Nel caso in cui la recensione non esista
@@ -65,6 +65,8 @@ public class RecensioneController {
             return "user/indexRecensione.html";
             }
         }
+	
+
 	
 	/*cliente*/
 	@GetMapping("/cliente/formNewRecensione")

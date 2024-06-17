@@ -1,5 +1,7 @@
 package it.uniroma3.siw.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +39,7 @@ public class RecensioneService {
         return recensioneRepository.existsByClienteAndEvento(cliente, evento);
     }
 
+	public List<Recensione> findByCliente(Cliente cliente) {
+        return recensioneRepository.findByCliente(cliente);
+    }
 }

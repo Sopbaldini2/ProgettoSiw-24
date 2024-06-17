@@ -280,6 +280,63 @@ header .icons .dropdown-content {
     background-color: #e0508f; /* Rosa più scuro al passaggio del mouse */
 }
 
+/*Recensioni*/
+
+.recensioni {
+    background: rgba(255, 51, 153, .05);
+    padding: 2rem 9%;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    color: #fff;
+}
+
+.recensioni h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--pink);
+}
+
+.recensioni p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.recensioni ul {
+    list-style: none;
+}
+
+.recensioni ul li {
+    background: #333;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.recensioni ul li p {
+    margin-bottom: 1rem;
+}
+
+.recensioni ul li .fas, .recensioni ul li .far {
+    color: var(--pink);
+    margin-right: 0.5rem;
+}
+
+.recensioni ul li a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fff;
+    background: var(--pink);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.recensioni ul li a:hover {
+    background: #fff;
+    color: var(--pink);
+}
 
 /*Footer*/
 

@@ -43,6 +43,7 @@
                         </div>
                         <!-- Link per il profilo utente, impostazioni, logout, etc. -->
                         <a href="/cliente/evento">Scrivi una Recensione</a>
+                        <a href="/cliente/carrello">I miei acquisti</a>
                         <a href="/logout">Logout</a>
                     </div>
                     <div class="arrow-down"></div>
@@ -58,7 +59,7 @@
 		
         <div class="container">
 			<div class="profile-header">
-				<img th:src="@{'/images/clienti/' + ${immagine}}" alt="Immagine del Cliente">
+				<img th:src="@{'/images/clienti/' + ${immagine}}" alt="">
                 <div>
 					<h1 th:text="${nome} + ' ' + ${cognome}">Nome Cognome</h1>
                 </div>

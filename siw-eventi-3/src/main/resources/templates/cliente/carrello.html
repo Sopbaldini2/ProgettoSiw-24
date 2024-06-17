@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello Servizi</title>
+    <!-- Includi CSS se necessario -->
+</head>
+<body>
+    <h1>Carrello Servizi</h1>
+    
+    <div id="servizi-container">
+        <!-- Itera sui servizi nel carrello -->
+        <div th:each="servizio : ${carrello}">
+            <h3 th:text="${servizio.nome}"></h3>
+            <p th:text="${servizio.descrizione}"></p>
+            <p>Prezzo: <span th:text="${#numbers.formatDecimal(servizio.prezzo, 2, 'COMMA')}"></span> €</p>
+        </div>
+    </div>
+    
+    <div id="prezzo-finale">
+        <h3>Prezzo Finale: <span th:text="${#numbers.formatDecimal(calcolaPrezzo(), 2, 'COMMA')}"></span> €</h3>
+        <!-- Form per aggiungere servizi (opzionale, se necessario) -->
+    </div>
+</body>
+</html>

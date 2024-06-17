@@ -1,5 +1,7 @@
 package it.uniroma3.siw.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,10 +11,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import it.uniroma3.siw.model.Cliente;
+import it.uniroma3.siw.model.Evento;
 //import it.uniroma3.siw.model.Evento;
 import it.uniroma3.siw.model.Recensione;
 import it.uniroma3.siw.service.ClienteService;
+import it.uniroma3.siw.service.EventoService;
 import it.uniroma3.siw.service.RecensioneService;
 
 @Controller
@@ -22,47 +28,31 @@ public class RecensioneController {
 	
 	@Autowired
 	private ClienteService clienteService;
-
-	@GetMapping(value="/cliente/formNewRecensione")
-	public String formNewRecensione(Model model) {
-		model.addAttribute("recensione", new Recensione());
-		model.addAttribute("clienti", clienteService.findAll());
-		return "cliente/formNewRecensione.html";
-	}
+	@Autowired
+	private EventoService eventoService;
+	
 	
 	@GetMapping(value="/user/indexRecensione")
 	public String indexRecensione() {
 		return "user/indexRecensione.html";
 	}
 	
-	@GetMapping("/user/manageRecensione")
+	@GetMapping("/admin/manageRecensione")
 	public String manageRecensione(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
-		return "user/manageRecensione.html";
+		return "adimn/manageRecensione.html";
 	}
 	
-	@PostMapping("cliente/recensione")
-	public String newRecensione(@ModelAttribute("recensione")Recensione recensione, Model model) {
-		if (!recensioneService.existsByClienteAndEvento(recensione.getCliente(), recensione.getEvento())) {
-			this.recensioneService.save(recensione); 
-			model.addAttribute("recensione", recensione);
-			model.addAttribute("recensioni", recensioneService.findAll());
-			return "recensioni.html";
-		} else {
-			model.addAttribute("messaggioErrore", "Questa recensione esiste già");
-			model.addAttribute("recensioni", recensioneService.findAll());
-			return "cliente/formNewRecensione.html"; 
-		}
-	}
 	
 
 	@GetMapping("/recensione")
 	public String getRecensioni(Model model) {
-		model.addAttribute("recensioni", this.recensioneService.findAll());
+		Iterable<Recensione> recensioni = recensioneService.findAll();
+		model.addAttribute("recensioni", recensioni);
 		return "recensioni.html";
 	}
 	
-	@GetMapping("/user/recensione/{id}")
+	@GetMapping("/admin/recensione/{id}")
     public String deleteRecensione(@PathVariable("id") Long id, Model model) {
         Recensione recensione = recensioneService.findById(id);
         if (recensione != null) {
@@ -75,4 +65,63 @@ public class RecensioneController {
             return "user/indexRecensione.html";
             }
         }
+	
+	/*cliente*/
+	@GetMapping("/cliente/formNewRecensione")
+	public String formNewRecensione(@RequestParam("id") Long eventoId, Model model, Principal principal) {
+		if (principal != null) {
+	        String clienteNome = principal.getName(); // Ottieni il nome del cliente autenticato
+	        Cliente cliente = clienteService.findByNome(clienteNome); // Recupera l'oggetto cliente completo
+	        if (cliente != null) {
+	            model.addAttribute("clienteNome", cliente.getNome()); // Aggiungi il nome del cliente al modello
+	            model.addAttribute("clienteCognome", cliente.getCognome()); // Aggiungi il cognome del cliente al modello
+	        }
+	    }
+	    model.addAttribute("recensione", new Recensione());
+	    model.addAttribute("eventoId", eventoId);
+	    return "cliente/formNewRecensione";
+	}
+	
+	
+	@PostMapping("/cliente/recensione")
+	public String newRecensione(@ModelAttribute("recensione") Recensione recensione,
+	                            @RequestParam("eventoId") Long eventoId,
+	                            Principal principal, Model model) {
+		
+		String clienteNome = principal.getName();
+		Cliente cliente = clienteService.findByNome(clienteNome);
+		
+		if (cliente == null) {
+	        model.addAttribute("messaggioErrore", "Cliente non trovato");
+	        return "cliente/formNewRecensione";
+	    }
+	    
+	    recensione.setCliente(cliente);
+	    
+		Evento evento = eventoService.findById(eventoId);
+	    if (evento != null) {
+	        recensione.setEvento(evento);
+	        
+	        if (!recensioneService.existsByClienteAndEvento(recensione.getCliente(), evento)) {
+	            recensioneService.save(recensione);
+	            model.addAttribute("recensione", recensione);
+	            return "redirect:/cliente/evento/" + eventoId;
+	        } else {
+	            model.addAttribute("messaggioErrore", "Questa recensione esiste già");
+	            model.addAttribute("recensioni", recensioneService.findAll());
+	            return "cliente/formNewRecensione"; 
+	        }
+	    } else {
+	        // Gestione caso in cui l'evento non esiste
+	        return "redirect:/cliente/evento";
+	    }
+	}
 }
+
+
+
+
+
+
+
+

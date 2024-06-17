@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi - Manage Recensioni</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/manageRecensioni.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
+
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/aboutUs">About Us</a>
+			</nav>	
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+				<div class="dropdown" id="userDropdown">
+					<span class="user-icon fas fa-user"></span>
+                    <div class="dropdown-content" id="dropdownContent">
+						<div class="user-info">
+							<!-- Mostra il nome admin dinamicamente -->
+							
+                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+                        </div>
+                        <!-- Link per logout admin -->
+                        <a href="/logout">Logout</a>
+                    </div>
+                    <div class="arrow-down"></div>
+               </div>
+			</div>		
+			
+		</header>
+		
+        <!-- header section ends -->
+        
+        <!-- Manage recensioni section starts -->
+        
+        <div class="recensioni_main">
+			<h1>Recensioni</h1>
+	        <div th:if="${recensioni==null || recensioni.isEmpty()}"> </div>
+	        <ul>
+				<li th:each="recensione : ${recensioni}">
+					
+					<div class="stars">
+						<i class="fas fa-star" th:each="star : ${#numbers.sequence(1, recensione.voto)}"></i>
+                    </div>
+                    
+			        <span th:text="${recensione.commento} ">Testo della recensione</span>
+			        
+			        <div class="user-info">
+						<h3 th:text="${recensione.cliente.nome}">Giovanni</h3>
+                    </div>
+                    
+		            <form th:action="@{'/admin/recensione/' + ${recensione.id}}" method="get">
+						<button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa recensione?');">Elimina</button>
+                    </form>
+		       </li>
+	        </ul>
+		</div>
+	
+	    <!-- Manage recensioni section ends -->
+	
+   </body>
+
+</html>

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.siw.controller.validator.EventoValidator;
 import it.uniroma3.siw.model.Evento;
+import it.uniroma3.siw.model.Recensione;
 //import it.uniroma3.siw.model.Recensione;
 import it.uniroma3.siw.model.Servizio;
 import it.uniroma3.siw.service.EventoService;
@@ -166,4 +167,19 @@ public class EventoController {
           }
       }	
 	
+	
+	
+	/*cliente*/
+	@GetMapping("/cliente/evento")
+	public String getEventiCliente(Model model) {		
+		model.addAttribute("eventi", this.eventoService.findAll());
+		return "cliente/eventiCliente.html";
+	}
+	
+	@GetMapping("/cliente/evento/{id}")
+	public String getEventoCliente(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("evento", this.eventoService.findById(id));
+		return "cliente/eventoCliente.html";
+	}
+
 }

@@ -28,8 +28,8 @@ insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextv
 
 
 
-INSERT INTO cliente (id, nome, cognome, email, telefono) VALUES (nextval('cliente_seq'), 'Mario', 'Rossi', 'mario.rossi@example.com', '1234567890');
-INSERT INTO cliente (id, nome, cognome, email, telefono) VALUES (nextval('cliente_seq'), 'Giulia', 'Bianchi', 'giulia.bianchi@example.com', '0987654321');
+INSERT INTO cliente (id, nome, cognome, email, image, frase) VALUES (nextval('cliente_seq'), 'Mario', 'Rossi', 'mario.rossi@example.com', 'mario.png', 'Mi piacciono le feste');
+INSERT INTO cliente (id, nome, cognome, email, image, frase) VALUES (nextval('cliente_seq'), 'Giulia', 'Bianchi', 'giulia.bianchi@example.com', 'giulia.png', 'Mi piacciono le feste');
 
 INSERT INTO Recensione (id, commento, voto, image, cliente_id, evento_id) VALUES (nextval('recensione_seq'), 'Ottimo evento!', 5, 'recensioneMario.png', 1,51);
 INSERT INTO Recensione (id, commento, voto, image, cliente_id, evento_id) VALUES (nextval('recensione_seq'), 'Buona esperienza', 4, 'recensioneGiulia.png', 51,1);

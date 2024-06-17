@@ -22,7 +22,9 @@ public class Cliente {
 	@NotBlank
 	private String email;
 	
-	private String telefono;
+	private String image;
+	
+	private String frase;
 	
 	@OneToMany
 	private List<Recensione> recensioni;
@@ -72,12 +74,20 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public String getTelefono() {
-		return telefono;
+	public String getImage() {
+		return image;
 	}
 
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
+	public String getFrase() {
+		return frase;
+	}
+
+	public void setFrase(String frase) {
+		this.frase = frase;
 	}
 	
 	@Override

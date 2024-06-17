@@ -1,0 +1,454 @@
+:root {
+    --pink: #e84393;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%; /* Impostazione della base rem */
+    scroll-behavior: smooth; /* Scorrimento animato */
+    scroll-padding-top: 6rem; /* Spazio iniziale per scorrere sopra l'header fisso */
+    overflow-x: hidden; /* Nascondi lo scorrimento orizzontale */
+    background: #000; /* Colore di sfondo globale */
+}
+
+section {
+    padding: 2rem 9%; /* Spaziatura interna delle sezioni */
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153, .05); /* Sfondo con trasparenza */
+}
+
+.heading span {
+    color: var(--pink); /* Utilizzo della variabile CSS */
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #fff;
+    color: #333;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background: var(--pink); /* Cambio di colore al passaggio del mouse */
+}
+
+/* Stili per l'header fisso */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+header .logo {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bolder;
+}
+
+header .logo span {
+    color: var(--pink);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #fff;
+}
+
+header .navbar a:hover {
+    color: var(--pink);
+}
+
+header .icons a {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+
+header .icons a:hover {
+    color: var(--pink);
+}
+
+/* Icona per il menu mobile */
+
+header #toggler {
+    display: none; /* Nascondi per impostazione predefinita */
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #fff;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid #fff;
+    display: none; /* Nascondi per impostazione predefinita */
+}
+
+/* Dropdown per l'utente nell'header */
+
+header .icons .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+/* Stile per l'icona dell'utente nel dropdown */
+
+header .icons .dropdown .user-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem; /* Aggiungi spazio sotto l'icona */
+}
+
+/* Cambia il colore dell'icona al passaggio del mouse */
+
+header .icons .dropdown .user-icon:hover {
+    color: var(--pink);
+}
+
+/* Stile per il contenitore del nome utente */
+
+header .icons .dropdown .user-info {
+    text-align: center;
+    font-size: 2.7rem; /* Dimensione più grande per il nome utente */
+    font-style: italic; /* Stile italico per il nome utente */
+    margin-bottom: 1.5rem; /* Spazio sotto il nome utente */
+}
+
+/* Linea separatoria sotto il nome utente */
+
+header .icons .dropdown .user-info::after {
+    content: '';
+    display: block;
+    width: 50%;
+    margin: 0.5rem auto;
+    border-bottom: 1px solid #ccc; /* Colore e stile della linea */
+}
+
+/* Stile per il contenitore delle opzioni nel dropdown */
+
+header .icons .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    top: calc(100% + 1rem); /* Posiziona il dropdown sotto l'icona */
+    left: 50%; /* Centra orizzontalmente il dropdown */
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease; /* Aggiungi transizione per l'opacità */
+    opacity: 0;
+    text-align: center;
+}
+
+/* Stile per le opzioni nel dropdown */
+
+header .icons .dropdown-content a {
+    color: #333;
+    padding: 0.8rem 1rem; /* Padding per le opzioni */
+    display: block;
+    text-align: center;
+    text-decoration: none; /* Rimuovi sottolineatura dai link */
+    font-size: 1.2rem; /* Dimensione più piccola per le opzioni */
+}
+
+/* Cambia il colore di sfondo e testo al passaggio del mouse sui link */
+
+header .icons .dropdown-content a:hover {
+    background-color: var(--pink);
+    color: #fff;
+}
+
+/* Mostra il dropdown quando l'icona è in hover */
+
+/* Mostra il dropdown quando l'icona è in hover o il dropdown è in hover */
+header .icons .dropdown:hover .dropdown-content,
+header .icons .dropdown-content:hover {
+    display: block;
+    opacity: 1;
+}
+
+/* Imposta una larghezza fissa per il dropdown content */
+header .icons .dropdown-content {
+    width: 200px; /* Imposta una larghezza fissa */
+}
+
+/*Profilo*/
+
+.container {
+	padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    background-color: #1a1a1a;
+    color: #fff;
+    max-width: 600px;
+    margin: 100px auto;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-header div {
+    flex-grow: 1; /* Per far occupare tutto lo spazio rimanente */
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 0;
+}
+
+.profile-details {
+    text-align: left; /* allinea il testo a sinistra */
+}
+
+.detail {
+    margin-bottom: 10px;
+}
+
+.detail label{
+	font-size: 1.6rem;
+    color: var(--pink);
+    display: block;	
+}
+
+.detail span {
+    font-size: 1.6rem;
+    color: #fff;
+    display: block;
+}
+
+.profile-details button {
+    background-color: var(--pink); /* Rosa */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.profile-details button:hover {
+    background-color: #e0508f; /* Rosa più scuro al passaggio del mouse */
+}
+
+
+/*Footer*/
+
+.footer .box-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.footer .box-container .box,
+.footer .box-container .box2{
+	flex:1 1 25rem;
+}
+
+.footer .box-container .box h3,
+.footer .box-container .box2 h3{
+	color: #fff;
+	font-size: 2.5rem;
+	padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+	display: block;
+	color: #666;
+	font-size: 1.5rem;
+	padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+	color: var(--pink);
+	text-decoration:underline ;
+}
+
+.footer .box-container .box img{
+	margin-top: 1rem;
+}
+
+.footer .box-container .box2 i{
+	margin-top: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.footer .box-container .box2 i:hover{
+	color: var(--pink);
+}
+
+
+.footer .credit{
+	text-align: center;
+	padding: 1.5rem;
+	margin-top: 1.5rem;
+	padding-top: 2.5rem;
+	font-size: 2rem;
+	color:rgb(255, 255, 255);
+	border-top: .1rem solid rgb(255, 255, 255);
+}
+
+.footer .credit span{
+	color: var(--pink);
+}
+
+
+
+
+
+
+/*media queries*/
+
+@media (max-width:991px){
+	html{
+	font-size: 55%;
+	}
+	
+	header{
+		padding: 2rem;
+	}
+	
+	section{
+		padding: 2rem;
+	}
+	
+	.home{
+		background-position: left;
+	}
+}	
+
+	
+@media (max-width:768px){
+	
+	header .fa-bars{
+		display: block;
+	}
+	
+	header .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #eee;
+		border-top: .1rem solid rgb(255, 255, 255);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	
+	header #toggler:checked ~ .navbar {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+	
+	header .navbar a{
+		margin: 1.5rem;
+		padding: 1.5rem;
+		background: #333;
+		border: .1rem solid rgb(255, 255, 255);
+		display: block;
+	}
+	
+	.home .content h3{
+		font-size: 5rem;
+	}
+	
+	.home .content span{
+		font-size: 2.5rem;
+	}	
+	
+	.icons-container .icons h3{
+	    font-size: 2rem;
+    }
+
+    .icons-container .icons span{
+	    font-size: 1.7rem;
+    }
+    
+    header .icons .dropdown .user-icon {
+        margin-right: 0.8rem; /* Riduci il margine destro per le icone più vicine */
+    }
+
+    header .icons .dropdown .dropdown-content {
+        min-width: 140px; /* Riduci la larghezza minima del dropdown */
+    }
+}
+
+@media (max-width:450px){
+	html{
+	font-size: 50%;
+	}
+	
+	.heading{
+		font-size: 3rem;
+	}
+	
+	header .icons .dropdown .user-info {
+        font-size: 1.2rem; /* Riduci la dimensione del nome utente */
+    }
+
+    header .icons .dropdown .user-info::after {
+        width: 40%; /* Riduci la larghezza della linea separatoria */
+    }
+
+    header .icons .dropdown .dropdown-content {
+        min-width: 120px; /* Riduci ulteriormente la larghezza minima del dropdown */
+        text-align: center; /* Allinea il testo al centro per schermi piccoli */
+        left: 0; /* Resetta la posizione sinistra */
+        transform: translateX(0); /* Resetta la trasformazione */
+        width: 100%; /* Larghezza al 100% per adattarsi allo schermo */
+    }
+
+    header .icons .dropdown-content a {
+        padding: 0.8rem; /* Riduci il padding per le opzioni */
+    }	
+  }

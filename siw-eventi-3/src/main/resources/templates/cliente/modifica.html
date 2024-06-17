@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Marik'Events - Aggiorna il Profilo</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/profileModifica.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
+
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/evento">Eventi</a>
+				<a href="/servizio">Servizi</a>
+				<a href="/recensione">Community</a>
+				<a href="/aboutUs">About us</a>
+			</nav>
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+				<div class="dropdown" id="userDropdown">
+					<span class="user-icon fas fa-user"></span>
+                    <div class="dropdown-content" id="dropdownContent">
+						<div class="user-info">
+							<!-- Mostra il nome utente dinamicamente -->
+							
+                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+                        </div>
+                        <!-- Link per il profilo utente, impostazioni, logout, etc. -->
+                        <a href="user/indexRecensione">Recensione</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                    <div class="arrow-down"></div>
+               </div>
+            </div>			
+			
+			
+		</header>
+		
+		<!-- Navigation bar section ends -->
+		
+		<!-- Modifica il profilo starts -->
+		
+		<div class="container">
+			
+            <div class="profile-header">
+				
+                <div class="profile-name">
+					<h2 th:text="${nome} + ' ' + ${cognome}">Nome Cognome</h2>
+                </div>
+            </div>
+            
+            <div class="profile-details">
+				<form th:action="@{/cliente/modifica}" method="post">
+					<div class="detail">
+						<label for="frase">Frase:</label>
+                        <input type="text" id="frase" name="frase" th:value="${frase}">
+                    </div>
+                
+                    <div class="detail">
+						<label for="immagine">Immagine del profilo:</label>
+                        <input type="file" id="immagine" name="immagine">
+                    </div>
+                    
+                    <button type="submit">Salva</button>
+                    <button type="button" onclick="location.href='/cliente/profile';">Annulla</button>
+               </form>
+            </div>
+         </div>
+         
+         <!-- Modifica il profilo ends -->
+   
+   </body>
+	
+</html>

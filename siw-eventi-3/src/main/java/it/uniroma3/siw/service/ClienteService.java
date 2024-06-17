@@ -60,5 +60,10 @@ public class ClienteService {
 	public Iterable<Cliente> findAll() {
 		return clienteRepository.findAll();
 	}
-	
+
+	public Cliente findByNome(String clienteNome) {
+		// TODO Auto-generated method stub
+		return clienteRepository.findByNome(clienteNome);
+	}
+
 }

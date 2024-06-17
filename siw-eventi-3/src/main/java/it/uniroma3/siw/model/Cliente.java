@@ -27,8 +27,17 @@ public class Cliente {
 	@OneToMany
 	private List<Recensione> recensioni;
 	@OneToMany
-	private List<Evento> richiesti;
+	private List<Servizio> richiesti;
 	
+	
+	
+	public List<Recensione> getRecensioni() {
+		return recensioni;
+	}
+
+	public void setRecensioni(List<Recensione> recensioni) {
+		this.recensioni = recensioni;
+	}
 	
 	@Override
 	public int hashCode() {

@@ -6,4 +6,7 @@ import it.uniroma3.siw.model.*;
 
 public interface ClienteRepository extends CrudRepository<Cliente,Long>{
 
+	public Cliente findByNome(String clienteNome);
+
+
 }

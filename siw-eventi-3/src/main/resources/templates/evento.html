@@ -100,7 +100,7 @@
 						<div class="user">
 							<img th:src="@{'/images/recensioni/' + ${recensione.image}}">
 							<div class="user-info">
-								<h3 th:text="${recensione.cliente.nome}">Giovanni</h3>
+							<h3 th:text="${recensione.cliente?.nome} + ' ' + ${recensione.cliente?.cognome}">Giovanni Bianchi</h3>
 								<span>Happy customer</span>
 							</div>
 						</div>

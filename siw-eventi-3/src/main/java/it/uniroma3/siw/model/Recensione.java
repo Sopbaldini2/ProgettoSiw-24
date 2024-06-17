@@ -26,7 +26,6 @@ public class Recensione {
 	@Max(5)
 	private Integer voto;
 	
-	private String image;
 	
 	@ManyToOne
 	private Evento evento;
@@ -50,14 +49,6 @@ public class Recensione {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
-	}
-	
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
 	}
 	
 	public Long getId() {

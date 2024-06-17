@@ -1,103 +1,108 @@
-:root {
-    --pink: #e84393;
+:root{
+	--pink: #e84393;	
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    transition: .2s linear;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition: .2s linear;
 }
 
-html {
-    font-size: 62.5%; /* Impostazione della base rem */
-    scroll-behavior: smooth; /* Scorrimento animato */
-    scroll-padding-top: 6rem; /* Spazio iniziale per scorrere sopra l'header fisso */
-    overflow-x: hidden; /* Nascondi lo scorrimento orizzontale */
-    background: #000; /* Colore di sfondo globale */
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+	overflow-x: hidden;
+	background: rgb(0, 0, 0);
 }
 
-section {
-    padding: 2rem 9%; /* Spaziatura interna delle sezioni */
+section{
+	padding: 2rem 9%;
 }
 
-.heading {
-    text-align: center;
-    font-size: 4rem;
-    color: #fff;
-    padding: 1rem;
-    margin: 2rem 0;
-    background: rgba(255, 51, 153, .05); /* Sfondo con trasparenza */
+.btn{
+	display: inline-block;
+	margin-top: 1rem;
+	border-radius: 5rem;
+	background: #fff;
+	color: #333;
+	padding: .9rem 3.5rem;
+	cursor: pointer;
+	font-size: 1.7rem;
 }
 
-.heading span {
-    color: var(--pink); /* Utilizzo della variabile CSS */
+.btn:hover{
+	background: var(--pink) ;
+}
+ 
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgb(0, 0, 0);
+	padding: 2rem 9%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index:1000 ;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0.1);
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 1rem;
-    border-radius: 5rem;
-    background: #fff;
-    color: #333;
-    padding: .9rem 3.5rem;
-    cursor: pointer;
-    font-size: 1.7rem;
+header .logo{
+	font-size: 3rem;
+	color: #fff;
+	font-weight: bolder;	
 }
 
-.btn:hover {
-    background: var(--pink); /* Cambio di colore al passaggio del mouse */
+header .logo span{
+	color: var(--pink);
 }
 
-/* Stili per l'header fisso */
+header .navbar a{
+	font-size: 2rem;
+	padding: 0 1.5rem;
+	color: #fff;
+}
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #000;
-    padding: 2rem 9%;
+header .navbar a:hover{
+	color: var(--pink);
+}
+
+header .icons {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1); /* Ombra leggera */
 }
 
-header .logo {
-    font-size: 3rem;
-    color: #fff;
-    font-weight: bolder;
+header .icons a{
+	font-size: 2.5rem;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 1.5rem;
 }
 
-header .logo span {
-    color: var(--pink);
+header .icons a:hover{
+	color: var(--pink);
 }
 
-header .navbar a {
-    font-size: 2rem;
-    padding: 0 1.5rem;
-    color: #fff;
+header #toggler{
+	display: none;
 }
 
-header .navbar a:hover {
-    color: var(--pink);
-}
-
-header .icons a {
-    font-size: 2.5rem;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 1.5rem;
-}
-
-header .icons a:hover {
-    color: var(--pink);
+header .fa-bars{
+	font-size: 3rem;
+	color: #fff;
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	cursor: pointer;
+	border: .1rem solid rgb(255, 255, 255);
+	display: none;
 }
 
 /* Icona per il menu mobile */

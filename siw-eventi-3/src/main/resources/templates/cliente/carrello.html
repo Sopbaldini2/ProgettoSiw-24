@@ -21,10 +21,10 @@
 			 <input type="checkbox" name="" id="toggler">
 		     <label for="toggler" class="fas fa-bars"></label>
 
-			<a th:href="${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}" class="logo"> Marik'<span>Events</span></a>
+			<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
 		     <nav class="navbar">
-				<a th:href="${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}">Home</a>
+				 <a href="/success">Home</a>
 			     <a href="/evento">Eventi</a>
 			     <a href="/servizio">Servizi</a>
 			     <a href="/recensione">Community</a>

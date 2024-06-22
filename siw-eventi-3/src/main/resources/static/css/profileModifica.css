@@ -258,6 +258,7 @@ header .icons .dropdown-content {
 
 .profile-details label {
     font-weight: bold;
+    font-size: 1.7rem;
 }
 
 .profile-details input[type="text"],

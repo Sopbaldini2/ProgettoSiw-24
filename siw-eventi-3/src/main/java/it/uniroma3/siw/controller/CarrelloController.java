@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,16 +29,23 @@ public class CarrelloController {
     public String showCarrello(Model model) {
         List<Servizio> serviziNelCarrello = new ArrayList<>();
         float prezzoTotale = 0;
+        
+        List<Servizio> allServizi = new ArrayList<>();
+        servizioService.findAll().forEach(allServizi::add);
 
         for (Map.Entry<Long, Integer> entry : carrello.entrySet()) {
             Servizio servizio = servizioService.findById(entry.getKey());
             serviziNelCarrello.add(servizio);
             prezzoTotale += servizio.getPrezzo() * entry.getValue();
         }
+        
+        List<Servizio> serviziDisponibili = allServizi.stream()
+                .filter(servizio -> !carrello.containsKey(servizio.getId()))
+                .collect(Collectors.toList());
 
         model.addAttribute("serviziNelCarrello", serviziNelCarrello);
         model.addAttribute("prezzoTotale", prezzoTotale);
-        model.addAttribute("serviziDisponibili", servizioService.findAll());
+        model.addAttribute("serviziDisponibili", serviziDisponibili);
 
         return "cliente/carrello";
     }

@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Agenzia Eventi - Carrello</title>
 
-	    <!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Agenzia Eventi - Carrello</title>
 
-	    <!--comando per legare un foglio di stile esterno all'html-->
-	    <link rel="stylesheet" href="/css/cart.css">
+	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-	    <link rel="shortcut icon" href="/images/iconaM.png">
-     </head>
+	<!--comando per legare un foglio di stile esterno all'html-->
+	<link rel="stylesheet" href="/css/cart.css">
 
-     <body>
-		 <header>
-			 
-			 <input type="checkbox" name="" id="toggler">
-		     <label for="toggler" class="fas fa-bars"></label>
+	<link rel="shortcut icon" href="/images/iconaM.png">
+</head>
 
-			<a href="/success" class="logo"> Marik'<span>Events</span></a>
+<body>
+	<header>
 
-		     <nav class="navbar">
-				 <a href="/success">Home</a>
-			     <a href="/evento">Eventi</a>
-			     <a href="/servizio">Servizi</a>
-			     <a href="/recensione">Community</a>
-			     <a href="/aboutUs">About us</a>
-		    </nav>
+		<input type="checkbox" name="" id="toggler">
+		<label for="toggler" class="fas fa-bars"></label>
 
-		    
-		  <div class="icons">
+		<a href="/success" class="logo"> Marik'<span>Events</span></a>
+
+		<nav class="navbar">
+			<a href="/success">Home</a>
+			<a href="/evento">Eventi</a>
+			<a href="/servizio">Servizi</a>
+			<a href="/recensione">Community</a>
+			<a href="/aboutUs">About us</a>
+		</nav>
+
+
+		<div class="icons">
 			<a href="/formSearchEventi" class="fas fa-search"></a>
 
 			<!-- Se l'utente è autenticato -->
@@ -53,133 +54,142 @@
 
 			<!-- Se l'utente NON è autenticato -->
 			<a sec:authorize="!isAuthenticated()" href="/login" class="fas fa-user"></a>
-		</div>	
+		</div>
 
 
-	   </header>
+	</header>
 
-	   <!-- header section ends -->
-	   
-	   <!-- Cart section starts -->
-	   
-       <div class="container mt-5">
-		   <h1>Carrello</h1>
-        
-           <p> Acquista i servizi che renderanno il tuo evento semplicemente <span>PERFETTO!</span></p>
+	<!-- header section ends -->
 
-           <h2>Servizi Disponibili</h2>
-           
-           <div th:if="${serviziDisponibili.isEmpty()}">
-			   
-			   <p>Non ci sono servizi disponibili.</p>
-           </div>
-           
-           <div th:unless="${serviziDisponibili.isEmpty()}">
-			   <table class="table">
-				   <thead>
-					   <tr>
-						   <th>Nome</th>
-                           <th>Descrizione</th>
-                           <th>Prezzo</th>
-                           <th>Azioni</th>
-                       </tr>
-                   </thead>
-                   
-                   <tbody>
-					   <tr th:each="servizio : ${serviziDisponibili}">
-						   <td th:text="${servizio.nome}">Nome</td>
-                           <td th:text="${servizio.descrizione}">Descrizione</td>
-                           <td th:text="${servizio.prezzo}">Prezzo</td>
-                           <td>
-							   <form th:action="@{/cliente/carrello/add/{id}(id=${servizio.id})}" method="post" style="display: inline;">
-								   <button type="submit" class="btn btn-primary">Aggiungi al Carrello</button>
-                               </form>
-                           </td>
-                       </tr>
-                   </tbody>
-               </table>
-           </div>
+	<!-- Cart section starts -->
 
-           <h2>Servizi nel Carrello</h2>
-           
-           <div th:if="${serviziNelCarrello.isEmpty()}">
-			   <p>Il carrello è vuoto.</p>
-           </div>
-           
-           <div th:unless="${serviziNelCarrello.isEmpty()}">
-			   <table class="table">
-				   <thead>
-					   <tr>
-						   <th>Nome</th>
-                           <th>Descrizione</th>
-                           <th>Prezzo</th>
-                           <th>Azioni</th>
-                       </tr>
-                   </thead>
-                   
-                   <tbody>
-					   <tr th:each="servizio : ${serviziNelCarrello}">
-						   <td th:text="${servizio.nome}">Nome</td>
-                           <td th:text="${servizio.descrizione}">Descrizione</td>
-                           <td th:text="${servizio.prezzo}">Prezzo</td>
-                           <td>
-							   <form th:action="@{/cliente/carrello/remove/{id}(id=${servizio.id})}" method="post" style="display: inline;">
-								   <button type="submit" class="btn btn-danger">Rimuovi dal Carrello</button>
-                               </form>
-                           </td>
-                       </tr>
-                  </tbody>
-               </table>
-               
-               <hr>
-               <h3>Totale: <span th:text="${prezzoTotale}">0</span> €</h3>
-          </div>
-       </div>
-       
-       <!-- Cart section ends -->
-       
-       <!-- footer section starts-->
+	<div class="container mt-5">
+		<h1>Carrello</h1>
 
-         <section class="footer">
-			 <div class="box-container">
-				 <div class="box">
-					 <h3>Quick Links</h3>
-					 <a th:href="${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}">Home</a>
-				     <a href="/aboutUs">About us</a>
-				     <a href="/evento">Eventi</a>
-				     <a href="/servizio">Servizi</a>
-				     <a href="/recensione">Community</a>
-					 <a th:href="@{${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}}">Contact</a>
-			     </div>
+		<p> Acquista i servizi che renderanno il tuo evento semplicemente <span>PERFETTO!</span></p>
 
-			     <div class="box">
-					 <h3>Extra Links</h3>
-				     <a href="/login">My account</a>
-				     <a href="/evento">My Event</a>
-			     </div>
+		<h2>Servizi Disponibili</h2>
 
-			     <div class="box">
-					 <h3>Contact Info</h3>
-				     <a href="#">+39 3319879060</a>
-				     <a href="#">marikamorelli@live.it</a>
-				     <a href="https://www.google.com/search?q=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&rlz=1C1GCEA_enIT827IT827&oq=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDE2NjlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">Anguillara
-					           Sabazia</a>
-				     <!--<img src="images/..." alt="">-->
-			    </div>
+		<div th:if="${serviziDisponibili.isEmpty()}">
 
-			    <div class="box2">
-					<h3>Follows</h3>
-				    <a href="https://www.facebook.com/Marikevents/?locale=it_IT"><i class="fa-brands fa-facebook"></i></a>
-				    <a href="https://www.instagram.com/marikevents/?locale=it"><i class="fa-brands fa-instagram"></i></a>
-				    <a href="https://www.tiktok.com/@marikevents"><i class="fa-brands fa-tiktok"></i></a>
-			    </div>
-		    </div>
+			<p>Non ci sono servizi disponibili.</p>
+		</div>
 
-		    <div class="credit"> Created by <span>Baldini Sophie & Catalano Veronica </span></div>
-	    </section>
-	    
-	    <!-- footer section ends -->
+		<div th:unless="${serviziDisponibili.isEmpty()}">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Descrizione</th>
+						<th>Prezzo</th>
+						<th>Azioni</th>
+					</tr>
+				</thead>
 
-     </body>
+				<tbody>
+					<tr th:each="servizio : ${serviziDisponibili}">
+						<td th:text="${servizio.nome}">Nome</td>
+						<td th:text="${servizio.descrizione}">Descrizione</td>
+						<td th:text="${servizio.prezzo}">Prezzo</td>
+						<td>
+							<form th:action="@{/cliente/carrello/add/{id}(id=${servizio.id})}" method="post"
+								style="display: inline;">
+								<button type="submit" class="btn btn-primary">Aggiungi al Carrello</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>Servizi nel Carrello</h2>
+
+		<div th:if="${serviziNelCarrello.isEmpty()}">
+			<p>Il carrello è vuoto.</p>
+		</div>
+
+		<div th:unless="${serviziNelCarrello.isEmpty()}">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Descrizione</th>
+						<th>Prezzo</th>
+						<th>Azioni</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="servizio : ${serviziNelCarrello}">
+						<td th:text="${servizio.nome}">Nome</td>
+						<td th:text="${servizio.descrizione}">Descrizione</td>
+						<td th:text="${servizio.prezzo}">Prezzo</td>
+						<td>
+							<form th:action="@{/cliente/carrello/remove/{id}(id=${servizio.id})}" method="post"
+								style="display: inline;">
+								<button type="submit" class="btn btn-danger">Rimuovi dal Carrello</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<hr>
+			<h3>Totale: <span th:text="${prezzoTotale}">0</span> €</h3>
+			<div class="fine-btn">
+				<a th:href="@{'/cliente/indexUser'}">
+					<button type="button">Fine</button></a>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Cart section ends -->
+
+	<!-- footer section starts-->
+
+	<section class="footer">
+		<div class="box-container">
+			<div class="box">
+				<h3>Quick Links</h3>
+				<a th:href="${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}">Home</a>
+				<a href="/aboutUs">About us</a>
+				<a href="/evento">Eventi</a>
+				<a href="/servizio">Servizi</a>
+				<a href="/recensione">Community</a>
+				<a
+					th:href="@{${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}}">Contact</a>
+			</div>
+
+			<div class="box">
+				<h3>Extra Links</h3>
+				<a href="/login">My account</a>
+				<a href="/evento">My Event</a>
+			</div>
+
+			<div class="box">
+				<h3>Contact Info</h3>
+				<a href="#">+39 3319879060</a>
+				<a href="#">marikamorelli@live.it</a>
+				<a
+					href="https://www.google.com/search?q=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&rlz=1C1GCEA_enIT827IT827&oq=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDE2NjlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">Anguillara
+					Sabazia</a>
+				<!--<img src="images/..." alt="">-->
+			</div>
+
+			<div class="box2">
+				<h3>Follows</h3>
+				<a href="https://www.facebook.com/Marikevents/?locale=it_IT"><i class="fa-brands fa-facebook"></i></a>
+				<a href="https://www.instagram.com/marikevents/?locale=it"><i class="fa-brands fa-instagram"></i></a>
+				<a href="https://www.tiktok.com/@marikevents"><i class="fa-brands fa-tiktok"></i></a>
+			</div>
+		</div>
+
+		<div class="credit"> Created by <span>Baldini Sophie & Catalano Veronica </span></div>
+	</section>
+
+	<!-- footer section ends -->
+
+</body>
 
 </html>

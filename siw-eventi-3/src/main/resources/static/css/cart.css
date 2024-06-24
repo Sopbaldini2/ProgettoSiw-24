@@ -154,7 +154,6 @@ header .icons .dropdown .user-info::after {
 /* Stile per il contenitore delle opzioni nel dropdown */
 
 header .icons .dropdown .dropdown-content {
-    display: none;
     position: absolute;
     background-color: #fff;
     min-width: 160px;
@@ -364,6 +363,28 @@ header .icons .dropdown-content {
 }
 
 
+
+.fine-btn {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.fine-btn a button {
+    font-size: 1.8rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--pink);
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fine-btn a button:hover {
+    background: #333;
+    color:#fff;
+}
 
 
 

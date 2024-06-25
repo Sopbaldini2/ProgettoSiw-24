@@ -73,7 +73,7 @@ public class RecensioneController {
 	public String formNewRecensione(@RequestParam("id") Long eventoId, Model model, Principal principal) {
 		if (principal != null) {
 	        String clienteNome = principal.getName(); // Ottieni il nome del cliente autenticato
-	        Cliente cliente = clienteService.findByNome(clienteNome); // Recupera l'oggetto cliente completo
+	        Cliente cliente = clienteService.findClienteByUsername(clienteNome); // Recupera l'oggetto cliente completo
 	        if (cliente != null) {
 	            model.addAttribute("clienteNome", cliente.getNome()); // Aggiungi il nome del cliente al modello
 	            model.addAttribute("clienteCognome", cliente.getCognome()); // Aggiungi il cognome del cliente al modello
@@ -91,7 +91,7 @@ public class RecensioneController {
 	                            Principal principal, Model model) {
 		
 		String clienteNome = principal.getName();
-		Cliente cliente = clienteService.findByNome(clienteNome);
+		Cliente cliente = clienteService.findClienteByUsername(clienteNome);
 		
 		if (cliente == null) {
 	        model.addAttribute("messaggioErrore", "Cliente non trovato");

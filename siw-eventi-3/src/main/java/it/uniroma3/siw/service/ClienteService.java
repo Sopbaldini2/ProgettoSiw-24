@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.siw.model.Cliente;
+import it.uniroma3.siw.model.Credentials;
 import it.uniroma3.siw.repository.ClienteRepository;
+import it.uniroma3.siw.repository.CredentialsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,8 @@ public class ClienteService {
 
     @Autowired
     protected ClienteRepository clienteRepository;
+    @Autowired
+    protected CredentialsRepository credentialsRepository;
 
     /**
      * This method retrieves a User from the DB based on its ID.
@@ -61,9 +65,12 @@ public class ClienteService {
 		return clienteRepository.findAll();
 	}
 
-	public Cliente findByNome(String clienteNome) {
-		// TODO Auto-generated method stub
-		return clienteRepository.findByNome(clienteNome);
+	public Cliente findClienteByUsername(String clienteNome) {
+		Credentials credentials = credentialsRepository.findClienteByUsername(clienteNome);
+        if (credentials != null) {
+            return credentials.getCliente(); // Assumi che Credentials abbia un campo cliente
+        }
+        return null;
 	}
 
 }

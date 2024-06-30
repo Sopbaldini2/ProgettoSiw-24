@@ -1,0 +1,72 @@
+Servizi :
+
+Nome: Caricaturista
+Foto : caricaturista.png
+Video: caricaturista.mp4
+Descrizione: Rendi il tuo evento indimenticabile con il nostro talentuoso caricaturista! Con anni di esperienza e un tocco artistico unico, 
+             il nostro caricaturista trasformerà gli ospiti del tuo evento in opere d'arte esilaranti e personalizzate.
+Prezzo: 300
+             
+             
+Nome: Mascotte
+Foto: mascotte.png
+Video: mascotte.mp4
+Descrizione: Aggiungi un tocco di magia e allegria al tuo evento con il nostro servizio di mascotte! Le nostre mascotte sono perfette per creare 
+             un'atmosfera festosa e incantata, rendendo ogni occasione speciale e indimenticabile.
+             Offriamo una vasta gamma di mascotte tra cui scegliere, dai personaggi dei cartoni animati ai supereroi, dagli animali fantastici ai classici delle fiabe. 
+             C'è una mascotte perfetta per ogni tema e occasione.
+Prezzo: 150 
+
+
+
+
+Dipendenti:
+
+Nome: Susanna
+Cognome: Franchi
+Foto: susanna.png
+Ruolo: caricaturista
+Email:susanna.franchi@esempio.com
+Telefono: +39 345 678 9012
+
+
+Nome: Giovanni
+Cognome: Sandero
+Foto: giovanni.png
+Ruolo: Mago
+Email: giovanni.sanderos@esempio.com
+Telefono: +39 348 765 4321
+
+
+
+
+Eventi:
+
+Titolo:Capodanno 2023
+Tipologia: Cenone 
+Data: 31/12/2023
+Foto: capodanno2023.png
+Descrizione: Vieni a Festeggiare il Capodanno insieme a noi. Durante la cena, sarete intrattenuti da spettacoli live, performance artistiche o magici che aggiungeranno un tocco di magia e divertimento alla serata.
+             Momenti speciali come il conto alla rovescia per il nuovo anno saranno festeggiati con entusiasmo e gioia collettiva.
+             Per concludere in bellezza, potrete godere di uno spettacolo di fuochi d'artificio spettacolare che illuminerà il cielo notturno, segnando l'inizio del nuovo anno con emozione e speranza per il futuro.
+Prezzo: 80
+
+
+Titolo: Karaoke Night
+Tipologia: serata musicale
+Data: 3/12/2024
+Foto: karaoke.png
+Descrizione: Vieni a vivere una serata diversa dal solito, una serata di karaoke, un'esperienza vibrante e coinvolgente, dove amici e estranei si riuniranno per cantare le loro canzoni preferite in un 
+             ambiente divertente e rilassato. Con luci colorate e un palco animato, i partecipanti si esibiscono con passione, creando un'atmosfera di festa e comunità.
+             La vasta selezione musicale vi permettera di trovare la vostra canzone preferita, mentre i momenti di risate e applausi rendono ogni esibizione unica e memorabile.
+Prezzo: 15
+
+
+Titolo: Glacialia
+Tipologia: Festival del giaccio
+Data: 15/01/2025 
+Foto: glacialia.png
+Descrizione: Glacialia è un festival incantevole che celebra l'arte e la creatività attraverso spettacolari sculture di ghiaccio, intrattenimenti culturali e una vibrante atmosfera festosa. Situato in un ambiente pittoresco 
+             tra paesaggi glaciali, offre esperienze uniche e indimenticabili per tutti i visitatori, con una combinazione perfetta di bellezza naturale e divertimento invernale. Dal Pattinaggio sul ghiaccio alla lotta con le palle di neve e 
+             per i più freddolosi meravigliosi chioschetti che offrono cioccolate calde, Vine Brulè e tanto altro.
+Prezzo:30

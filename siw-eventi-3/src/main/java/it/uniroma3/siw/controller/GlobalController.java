@@ -12,8 +12,8 @@ import it.uniroma3.siw.model.Credentials;
 
 @ControllerAdvice
 public class GlobalController {
+	
 	@ModelAttribute("userDetails")
-
     public UserDetails getUser() {
         UserDetails user = null;
 

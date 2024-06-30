@@ -71,6 +71,10 @@ import javax.sql.DataSource;
                 .permitAll()
                 .defaultSuccessUrl("/success", true)
                 .failureUrl("/login?error=true")
+                //.and()
+                //.oauth2Login()
+                //.loginPage("/login") // La tua pagina di login personalizzata
+                //.defaultSuccessUrl("/success", true)
                 // LOGOUT: qui definiamo il logout
                 .and()
                 .logout()

@@ -70,3 +70,38 @@ Descrizione: Glacialia è un festival incantevole che celebra l'arte e la creati
              tra paesaggi glaciali, offre esperienze uniche e indimenticabili per tutti i visitatori, con una combinazione perfetta di bellezza naturale e divertimento invernale. Dal Pattinaggio sul ghiaccio alla lotta con le palle di neve e 
              per i più freddolosi meravigliosi chioschetti che offrono cioccolate calde, Vine Brulè e tanto altro.
 Prezzo:30
+
+
+
+
+
+
+
+
+/*casi d'uso*/
+/*UTENTE OCCASIONALE*/
+operazioni di lettura:
+ -visualizzazione di tutti gli eventi con i relativi dettagli
+ -visualizzazione di tutti i servizi con i relativi dettagli
+ -visualizzazione di tutte le recensioni 
+ -visualizzazione di eventi tramite ricerca
+ -visualizzazione di tutti i performer
+
+operazioni di inserimento:
+-contatta agenzia mediante il form
+
+
+/*UTENTE REGISTRATO (o cliente)*/
+operazioni di lettura, come per l'utente occasionale
+
+operzioni di inserimento:
+-il cliente contatta l'agenzia mediante il form
+-Il cliente scrive una recensione per un evento inserendo un commento ed un voto
+
+
+operazioni di aggiornamento:
+-il cliente modifica i suoi dati e la foto profilo
+-il cliente aggiunge o rimuove dal carrello i servizi acquistati per il suo evento
+
+operazioni di cancellazione:
+-il cliente cancella le sue recensioni

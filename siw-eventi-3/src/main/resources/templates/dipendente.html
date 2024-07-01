@@ -100,12 +100,14 @@
 			 <div class="box-container">
 				 <div class="box">
 					 <h3>Quick Links</h3>
-				     <a th:href="${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}">Home</a>
-					 <a href="/aboutUs">About us</a>
-					 <a href="/evento">Eventi</a>
-					 <a href="/servizio">Servizi</a>
-					 <a href="/recensione">Community</a>
-					 <a th:href="@{${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}}">Contact</a>
+				     <a sec:authorize="isAuthenticated()" href="/success">Home</a>
+				     <a sec:authorize="!isAuthenticated()" href="/">Home</a>
+				     <a href="/aboutUs">About us</a>
+				     <a href="/evento">Eventi</a>
+				     <a href="/servizio">Servizi</a>
+				     <a href="/recensione">Community</a>
+				     <a sec:authorize="isAuthenticated()" href="/success">Contact</a>
+				     <a sec:authorize="!isAuthenticated()" href="/">Contact</a>
 				 </div>
 				 
 				  <div class="box">

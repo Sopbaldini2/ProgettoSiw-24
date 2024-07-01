@@ -272,22 +272,23 @@ header .icons .dropdown-content {
 
 .servizi-info h4 {
     color: #ff69b4; /* Rosa */
+    font-size: 2rem;
+    margin-bottom: 30px; /* Spazio sotto il titolo principale */
 }
 
 .servizi-info ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spazio tra i servizi */
 }
 
 .servizi-info li {
+    flex: 1 1 calc(50% - 20px); /* Due servizi per riga con spazio tra loro */
+    box-sizing: border-box;
+    text-align: center; /* Centra il contenuto all'interno dell'elemento */
     margin-bottom: 20px;
-    font-size: 1.8rem; /* Aumenta la dimensione del testo */
-}
-
-.servizi-info p strong {
-    color: var(--pink); /* Colore rosa per il nome dell'evento */
-    font-weight: bold;
-    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
 }
 
 .servizio_image img {
@@ -296,6 +297,18 @@ header .icons .dropdown-content {
     max-height: 200px; /* Limita l'altezza massima delle immagini */
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Rosa */
+    margin-bottom: 10px; /* Spazio sotto l'immagine */
+}
+
+.servizi-info p {
+    font-size: 1.8rem; /* Aumenta la dimensione del testo */
+    margin: 0;
+}
+
+.servizi-info p strong {
+    color: var(--pink); /* Colore rosa per il nome dell'evento */
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta la dimensione del testo del nome */
 }
 
 .servizi-info a button {
@@ -306,14 +319,11 @@ header .icons .dropdown-content {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px; /* Spazio sopra il pulsante */
 }
 
 .servizi-info a button:hover {
     background-color: #ff1493; /* Rosa più scuro al passaggio del mouse */
-}
-
-.servizi-info div {
-    margin-top: 20px;
 }
 
 /*recensioni*/

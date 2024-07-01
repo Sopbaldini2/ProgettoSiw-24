@@ -43,3 +43,48 @@ INSERT INTO Recensione (id, commento, voto, cliente_id, evento_id) VALUES (nextv
 INSERT INTO Recensione (id, commento, voto, cliente_id, evento_id) VALUES (nextval('recensione_seq'), 'Nonostante la cornice suggestiva, l''evento è stato compromesso da diversi problemi organizzativi. Il servizio è stato lento e disorganizzato, con tempi di attesa eccessivi per i piatti. Inoltre, l''atmosfera romantica è stata disturbata da rumori provenienti da altre tavolate e da un''eccessiva confusione nell''organizzazione degli spazi. Il cibo, pur decente, non ha raggiunto le aspettative per un ristorante di questa categoria. ', 1, 101, 351);
 INSERT INTO Recensione (id, commento, voto, cliente_id, evento_id) VALUES (nextval('recensione_seq'), 'Nel complesso, un''idea promettente ma con esecuzione inconsistente. Sebbene l''idea di combinare musica dal vivo con attività di benessere fosse interessante, l''organizzazione ha mostrato alcune lacune.', 2, 1, 251);
 
+
+
+-- Sinfonia delle Stelle
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (1, 51);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (1, 101);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (1, 201);
+
+
+-- Avventura nelle nuvole
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (51, 451);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (51,101);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (51, 301);
+
+
+-- Conferenza delle menti brillanti
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (101, 1);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (101, 151);
+
+
+-- Serata enigmatica
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (151, 151);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (151, 1);
+
+
+-- Mostra dei sapori del mondo
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (201, 51);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (201, 151);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (201, 451);
+
+
+-- Onda su onda
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (251, 1);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (251, 101);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (251, 301);
+
+
+-- Notte Dei racconti incantati
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (301, 1);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (301, 301);
+
+
+-- San Valentino
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (351, 401);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (351, 151);
+INSERT INTO evento_servizi (eventi_id, servizi_id) VALUES (351, 101);

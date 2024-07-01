@@ -219,21 +219,22 @@ header .icons .dropdown-content {
 
 /*recensioni*/
 
-.recensioni-info {
+/*.recensioni-info {
     border-top: 1px solid #fff;
     padding-top: 20px;
     font-size: 1.8rem; /* Aumenta la dimensione del testo */
-}
+/*}
 
 .recensioni-info h4 {
     color: #ff69b4; /* Rosa */
-    margin-bottom: 20px;
-}
+   /* margin-bottom: 20px;
+}*/
 
 .recensione .box-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
+    padding: 0 2rem 3rem 2rem;
 }
 
 
@@ -241,7 +242,8 @@ header .icons .dropdown-content {
     flex: 1 1 30rem;
     box-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
-    padding: 3rem 2rem;
+    padding: 3rem  2rem;
+    text-align: center;
     flex: 1 1 30rem; /* Dimensione fissa del box */
     position: relative;
     display: flex;

@@ -290,12 +290,13 @@ header .icons .dropdown-content {
 }
 
 .fine-btn {
-    text-align: left;
+    text-align: center;
     margin-top: 20px;
+    
 }
 
 .fine-btn a button {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 0.5rem 1rem;
     background-color: var(--pink);
     color: #fff;
@@ -307,7 +308,8 @@ header .icons .dropdown-content {
 }
 
 .fine-btn a button:hover {
-    background-color:var(--pink); /* Rosa più scuro al passaggio del mouse */
+    background-color: deeppink; /* Rosa più scuro al passaggio del mouse */
+    color: #000;
 }
 
 

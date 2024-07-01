@@ -58,7 +58,7 @@
 	        <form th:action="@{/admin/servizio}" method="POST" th:object="${servizio}">
 				
 				<div th:if="${#fields.hasGlobalErrors()}">
-					<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+					<span th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</span> 
   		        </div>
 		
 		        <div class="titolo">
@@ -75,18 +75,25 @@
 		       </div>
 
 		       <div class="description">
-				   <label>Descrizione:</label> <span><input type="text" th:field="${servizio.descrizione}" /></span>
+				   <label>Descrizione:</label> 
+				   <span>
+        <textarea id="descrizione" th:field="${servizio.descrizione}"></textarea>
+    </span>
 		           <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}">
 		           </span>
 		      </div>
 
 		     <div class="image">
 				 <label>Image:</label> <span><input type="file" id="image" name="image" accept="image/png" /></span>
+				 <span th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
+		           </span>
 		     </div>
 		     
 		     <div class="video">
 				 <label for="video">Video:</label>
                  <input type="file" id="video" name="video" accept="video/*" />
+                 <span th:if="${#fields.hasErrors('video')}" th:errors="*{video}">
+		           </span>
              </div>
              
 		     <div>

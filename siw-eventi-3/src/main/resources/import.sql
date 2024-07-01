@@ -11,7 +11,7 @@ insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) VALUES
 insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) values(nextval('dipendente_seq'), 'Martina', 'Bartolini', 'martina.png', 'Fotografa', 'martinabartolini@gmail.com', '3456673498');
 insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) values(nextval('dipendente_seq'), 'Asia', 'Bianchi', 'asia.png', 'Cantante', 'asiabianchi@gmail.com', '3485678879');
 insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) values(nextval('dipendente_seq'), 'Rachele', 'Paddeo', 'rachele.png', 'Dj', 'rachelepaddeo@gmail.com', '3466568870');
-insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) values(nextval('dipendente_seq'), 'Riccardo', 'gaffi', 'riccardo.png', 'Cameriere', 'riccardogaffi@gmial.com', '3778900987');
+insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) values(nextval('dipendente_seq'), 'Riccardo', 'Gaffi', 'riccardo.png', 'Cameriere', 'riccardogaffi@gmial.com', '3778900987');
 insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) values(nextval('dipendente_seq'), 'Francesco', 'Bavaro', 'francesco.png', 'Musicista', 'francescobavaro@gmail.com', '3890345234');
 insert into dipendente (id, nome, cognome, image, ruolo, email, telefono) values(nextval('dipendente_seq'), 'Sabrina', 'Mancini', 'sabrina.png', 'Animatore', 'sabrinamancini@gmail.com', '3875442134');
 

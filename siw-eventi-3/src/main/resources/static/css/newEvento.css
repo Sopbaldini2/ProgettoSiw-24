@@ -256,7 +256,8 @@ body {
 .evento_main input[type="text"],
 .evento_main input[type="number"],
 .evento_main input[type="date"],
-.evento_main input[type="file"] {
+.evento_main input[type="file"],
+textarea {
     width: 100%;
     padding: 1rem;
     border: 1px solid var(--border-color);
@@ -270,16 +271,18 @@ body {
 .evento_main input[type="text"]:focus,
 .evento_main input[type="number"]:focus,
 .evento_main input[type="date"]:focus,
-.evento_main input[type="file"]:focus {
+.evento_main input[type="file"]:focus,
+textarea:focus {
     border-color: var(--pink);
     box-shadow: 0 0 5px var(--input-focus);
 }
 
 .evento_main span {
+	text-align: center;
     display: block;
-    margin-top: .5rem;
-    color: var(--error-color);
-    font-size: 1.2rem;
+	margin-top: .3rem;
+	color: var(--error-color);
+	font-size: 1.4rem;
 }
 
 .evento_main button[type="submit"] {

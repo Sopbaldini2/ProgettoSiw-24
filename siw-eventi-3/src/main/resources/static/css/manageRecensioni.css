@@ -206,6 +206,7 @@ header .icons .dropdown-content {
 .recensioni_main h1 {
     font-size: 3.5rem;
     margin-bottom: 2rem;
+    color: var(--pink);
 }
 
 .recensioni_main ul {

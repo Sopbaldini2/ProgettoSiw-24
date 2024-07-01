@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Agenzia Eventi - Scelta servizi</title>
+		<title>Scelta servizi</title>
 
 		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -16,8 +16,6 @@
 		<link rel="stylesheet" href="/css/serviziToAdd.css">
 
 		<link rel="shortcut icon" href="/images/iconaM.png " type="image/x-icon">
-
-
 	</head>
 
 <body>
@@ -36,18 +34,18 @@
 		<div class="icons">
 			<a href="/formSearchEventi" class="fas fa-search"></a>
 			<div class="dropdown" id="userDropdown">
-					<span class="user-icon fas fa-user"></span>
-                    <div class="dropdown-content" id="dropdownContent">
-						<div class="user-info">
-							<!-- Mostra il nome admin dinamicamente -->
-							
-                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
-                        </div>
-                        <!-- Link per logout admin -->
-                        <a href="/logout">Logout</a>
-                    </div>
-                    <div class="arrow-down"></div>
-               </div>
+				<span class="user-icon fas fa-user"></span>
+				<div class="dropdown-content" id="dropdownContent">
+					<div class="user-info">
+						<!-- Mostra il nome admin dinamicamente -->
+
+						<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+					</div>
+					<!-- Link per logout admin -->
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="arrow-down"></div>
+			</div>
 		</div>
 
 	</header>
@@ -55,40 +53,40 @@
 	<!-- Seleziona servizi section starts -->
 	<div class="servizi">
 
-	<h2>Servizi già aggiunti per l'evento <span th:text="${evento.nome}"></span></h2>
-	<ul>
-		<li th:each="servizio : ${evento.servizi}">
-			<span th:text="${servizio.nome}"></span>
-			<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
-			<div class="servizio_image">
-				<img th:src="@{'/images/servizi/' + ${servizio.image}}">
-			</div>
-			<div class="btn-group">
-			    <a th:href="@{'/admin/removeServizioFromEvento/' + ${servizio.id} + '/' + ${evento.id}}">Rimuovi</a>
-			</div>
-		</li>
-	</ul>
-
-	<h2>Servizi che si possono aggiungere per l'evento <span th:text="${evento.nome}"></span></h2>
-	<div>
-
+		<h2>Servizi già aggiunti per l'evento <span th:text="${evento.nome}"></span></h2>
 		<ul>
-			<li th:each="servizio : ${serviziToAdd}">
+			<li th:each="servizio : ${evento.servizi}">
 				<span th:text="${servizio.nome}"></span>
 				<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
 				<div class="servizio_image">
 					<img th:src="@{'/images/servizi/' + ${servizio.image}}">
 				</div>
 				<div class="btn-group">
-				    <a th:href="@{'/admin/addServizioToEvento/' + ${servizio.id} + '/' + ${evento.id}}">Aggiungi</a>
+					<a th:href="@{'/admin/removeServizioFromEvento/' + ${servizio.id} + '/' + ${evento.id}}">Rimuovi</a>
 				</div>
 			</li>
 		</ul>
+
+		<h2>Servizi che si possono aggiungere per l'evento <span th:text="${evento.nome}"></span></h2>
+		<div>
+
+			<ul>
+				<li th:each="servizio : ${serviziToAdd}">
+					<span th:text="${servizio.nome}"></span>
+					<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
+					<div class="servizio_image">
+						<img th:src="@{'/images/servizi/' + ${servizio.image}}">
+					</div>
+					<div class="btn-group">
+						<a th:href="@{'/admin/addServizioToEvento/' + ${servizio.id} + '/' + ${evento.id}}">Aggiungi</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="fine-btn">
+			<a th:href="@{'/admin/formUpdateEvento/' + ${evento.id}}"><button type="button">Fine</button></a>
+		</div>
 	</div>
-	<div class="fine-btn">
-		<a th:href="@{'/admin/formUpdateEvento/' + ${evento.id}}"><button type="button">Fine</button></a>
-	</div>
-</div>
 
 </body>
 

@@ -1,80 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Agenzia Eventi - Manage Servzi</title>
-		
-		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-		
-		<!--comando per legare un foglio di stile esterno all'html-->
-		<link rel="stylesheet" href="/css/manageServizi.css">
-		
-		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
-	</head>
-	<body>
-		
-		<header>
-			
-			<input type="checkbox" name="" id="toggler">
-			<label for="toggler" class="fas fa-bars"></label>
-			
-			<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
-			<nav class="navbar">
-				<a href="/success">Home</a>
-				<a href="/servizio">Servizi</a>
-			</nav>	
-			
-			<div class="icons">
-				<a href="/formSearchEventi" class="fas fa-search"></a>
-				<div class="dropdown" id="userDropdown">
-					<span class="user-icon fas fa-user"></span>
-                    <div class="dropdown-content" id="dropdownContent">
-						<div class="user-info">
-							<!-- Mostra il nome admin dinamicamente -->
-							
-                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
-                        </div>
-                        <!-- Link per logout admin -->
-                        <a href="/logout">Logout</a>
-                    </div>
-                    <div class="arrow-down"></div>
-               </div>
-			</div>		
-			
-		</header>
-		
-        <!-- header section ends -->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Manage Servzi</title>
 
-	    <!-- Manage servizi section starts -->
-	    
-	    <div class="servizi_main">
-			<h1>Servizi</h1>
-	        <div th:if="${servizi==null || servizi.isEmpty()}"> </div>
-	        <ul>
-				<li th:each="servizio : ${servizi}">
-					<div class="servizio_image">
-						<img th:src="@{'/images/servizi/' + ${servizio.image}}" >
-			        </div>
-			        
-					<span th:text="${servizio.nome} ">Nome del Servizio</span>
-			        <div class="price">
-						<label> Prezzo: </label>
-						<span th:text="'€' + ${servizio.prezzo}"> 20 €</span>
-				    </div>
-		            
-		           <form th:action="@{'/admin/servizio/' + ${servizio.id}}" method="get">
-					   <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo servizio?');">Elimina</button>
-                   </form>
-		       </li>
-	        </ul>
-		</div> 
-	
-	    <!-- Manage servizi section ends -->
-	
-    </body>
+	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<!--comando per legare un foglio di stile esterno all'html-->
+	<link rel="stylesheet" href="/css/manageServizi.css">
+
+	<link rel="shortcut icon" href="/images/iconaM.png " type="image/x-icon">
+</head>
+
+<body>
+
+	<header>
+
+		<input type="checkbox" name="" id="toggler">
+		<label for="toggler" class="fas fa-bars"></label>
+
+		<a href="/success" class="logo"> Marik'<span>Events</span></a>
+
+		<nav class="navbar">
+			<a href="/success">Home</a>
+			<a href="/servizio">Servizi</a>
+		</nav>
+
+		<div class="icons">
+			<a href="/formSearchEventi" class="fas fa-search"></a>
+			<div class="dropdown" id="userDropdown">
+				<span class="user-icon fas fa-user"></span>
+				<div class="dropdown-content" id="dropdownContent">
+					<div class="user-info">
+						<!-- Mostra il nome admin dinamicamente -->
+
+						<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+					</div>
+					<!-- Link per logout admin -->
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="arrow-down"></div>
+			</div>
+		</div>
+
+	</header>
+
+	<!-- header section ends -->
+
+	<!-- Manage servizi section starts -->
+
+	<div class="servizi_main">
+		<h1>Servizi</h1>
+		<div th:if="${servizi==null || servizi.isEmpty()}"> </div>
+		<ul>
+			<li th:each="servizio : ${servizi}">
+				<div class="servizio_image">
+					<img th:src="@{'/images/servizi/' + ${servizio.image}}">
+				</div>
+
+				<span th:text="${servizio.nome} ">Nome del Servizio</span>
+				<div class="price">
+					<label> Prezzo: </label>
+					<span th:text="'€' + ${servizio.prezzo}"> 20 €</span>
+				</div>
+
+				<form th:action="@{'/admin/servizio/' + ${servizio.id}}" method="get">
+					<button type="submit"
+						onclick="return confirm('Sei sicuro di voler eliminare questo servizio?');">Elimina</button>
+				</form>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Manage servizi section ends -->
+
+</body>
 
 </html>

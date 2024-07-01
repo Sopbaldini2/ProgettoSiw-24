@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Agenzia Eventi - Nuovo Recensione</title>
+	<title>Nuova Recensione</title>
 
 	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -40,8 +40,8 @@
 							<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
 						</div>
 						<a href="/cliente/profile">Profilo</a>
-                        <a href="/cliente/carrello">I miei acquisti</a>
-                        <a href="/logout">Logout</a>
+						<a href="/cliente/carrello">I miei acquisti</a>
+						<a href="/logout">Logout</a>
 					</div>
 					<div class="arrow-down"></div>
 				</div>
@@ -81,7 +81,8 @@
 			<div class="form-group">
 				<label for="cliente">Cliente:</label>
 				<input type="text" class="form-control" id="cliente" name="cliente" th:value="${clienteNome}" disabled>
-				<input type="text" class="form-control" id="cognome" name="cognome" th:value="${clienteCognome}" disabled>
+				<input type="text" class="form-control" id="cognome" name="cognome" th:value="${clienteCognome}"
+					disabled>
 			</div>
 
 			<button type="submit" class="btn btn-primary">Aggiungi Recensione</button>

@@ -32,32 +32,32 @@
 		<div class="icons">
 			<a href="/formSearchEventi" class="fas fa-search"></a>
 			<div class="dropdown" id="userDropdown">
-					<span class="user-icon fas fa-user"></span>
-                    <div class="dropdown-content" id="dropdownContent">
-						<div class="user-info">
-							<!-- Mostra il nome admin dinamicamente -->
-							
-                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
-                        </div>
-                        <!-- Link per logout admin -->
-                        <a href="/logout">Logout</a>
-                    </div>
-                    <div class="arrow-down"></div>
-               </div>
+				<span class="user-icon fas fa-user"></span>
+				<div class="dropdown-content" id="dropdownContent">
+					<div class="user-info">
+						<!-- Mostra il nome admin dinamicamente -->
+
+						<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+					</div>
+					<!-- Link per logout admin -->
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="arrow-down"></div>
+			</div>
 		</div>
 
 
 	</header>
 	<div class="white-box">
-			<div class="container">
-				<div class="section">
-					<h1>Gestione degli Eventi</h1>
-					<div class="link-container">
-						<a href="/admin/manageEvento">Gestisci Evento</a>
-						<a href="/admin/formNewEvento">Aggiungi nuovo Evento</a>
-					</div>
+		<div class="container">
+			<div class="section">
+				<h1>Gestione degli Eventi</h1>
+				<div class="link-container">
+					<a href="/admin/manageEvento">Gestisci Evento</a>
+					<a href="/admin/formNewEvento">Aggiungi nuovo Evento</a>
 				</div>
 			</div>
+		</div>
 	</div>
 </body>
 

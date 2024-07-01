@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Agenzia Eventi - Manage Dipendenti</title>
-		
-		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-		
-		<!--comando per legare un foglio di stile esterno all'html-->
-		<link rel="stylesheet" href="/css/manageDipendenti.css">
-		
-		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
-	</head>
-	<body>
-		
-		<header>
-			
-			<input type="checkbox" name="" id="toggler">
-			<label for="toggler" class="fas fa-bars"></label>
-			
-			<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
-			<nav class="navbar">
-				<a href="/success">Home</a>
-				<a href="/aboutUs">About Us</a>
-			</nav>	
-			
-			<div class="icons">
-				<a href="/formSearchEventi" class="fas fa-search"></a>
-				<div class="dropdown" id="userDropdown">
-					<span class="user-icon fas fa-user"></span>
-                    <div class="dropdown-content" id="dropdownContent">
-						<div class="user-info">
-							<!-- Mostra il nome admin dinamicamente -->
-							
-                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
-                        </div>
-                        <!-- Link per logout admin -->
-                        <a href="/logout">Logout</a>
-                    </div>
-                    <div class="arrow-down"></div>
-               </div>
-			</div>		
-			
-		</header>
-		
-        <!-- header section ends -->
-        
-        <!-- Manage dipendenti section starts -->
-        
-        <div class="dipendente_main">
-			<h1>Performers</h1>
-	        <div th:if="${dipendenti==null || dipendenti.isEmpty()}"> </div>
-	        <ul>
-				<li th:each="dipendente : ${dipendenti}">
-					<div class="dipendente_image">
-						<img th:src="@{'/images/dipendenti/' + ${dipendente.image}}" >
-			        </div>
-					<span th:text="${dipendente.nome} + ' ' + ${dipendente.cognome}">Nome e cognome del performer </span>
-		            <form th:action="@{'/admin/dipendente/' + ${dipendente.id}}" method="get">
-						<button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo dipendente?');">Elimina</button>
-                    </form>
-		       </li>
-	        </ul>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Manage Dipendenti</title>
+
+	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<!--comando per legare un foglio di stile esterno all'html-->
+	<link rel="stylesheet" href="/css/manageDipendenti.css">
+
+	<link rel="shortcut icon" href="/images/iconaM.png " type="image/x-icon">
+</head>
+
+<body>
+
+	<header>
+
+		<input type="checkbox" name="" id="toggler">
+		<label for="toggler" class="fas fa-bars"></label>
+
+		<a href="/success" class="logo"> Marik'<span>Events</span></a>
+
+		<nav class="navbar">
+			<a href="/success">Home</a>
+			<a href="/aboutUs">About Us</a>
+		</nav>
+
+		<div class="icons">
+			<a href="/formSearchEventi" class="fas fa-search"></a>
+			<div class="dropdown" id="userDropdown">
+				<span class="user-icon fas fa-user"></span>
+				<div class="dropdown-content" id="dropdownContent">
+					<div class="user-info">
+						<!-- Mostra il nome admin dinamicamente -->
+
+						<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+					</div>
+					<!-- Link per logout admin -->
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="arrow-down"></div>
+			</div>
 		</div>
-        
-	    <!-- Manage dipendenti section ends -->
-	
-   </body>
+
+	</header>
+
+	<!-- header section ends -->
+
+	<!-- Manage dipendenti section starts -->
+
+	<div class="dipendente_main">
+		<h1>Performers</h1>
+		<div th:if="${dipendenti==null || dipendenti.isEmpty()}"> </div>
+		<ul>
+			<li th:each="dipendente : ${dipendenti}">
+				<div class="dipendente_image">
+					<img th:src="@{'/images/dipendenti/' + ${dipendente.image}}">
+				</div>
+				<span th:text="${dipendente.nome} + ' ' + ${dipendente.cognome}">Nome e cognome del performer </span>
+				<form th:action="@{'/admin/dipendente/' + ${dipendente.id}}" method="get">
+					<button type="submit"
+						onclick="return confirm('Sei sicuro di voler eliminare questo dipendente?');">Elimina</button>
+				</form>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Manage dipendenti section ends -->
+
+</body>
 
 </html>

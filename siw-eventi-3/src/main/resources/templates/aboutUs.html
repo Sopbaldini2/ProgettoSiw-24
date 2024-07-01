@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Agenzia Eventi</title>
+	<title>About us</title>
 
 	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -28,7 +28,7 @@
 
 		<nav class="navbar">
 			<a sec:authorize="isAuthenticated()" href="/success">Home</a>
-		    <a sec:authorize="!isAuthenticated()" href="/" >Home</a>
+			<a sec:authorize="!isAuthenticated()" href="/">Home</a>
 			<a href="/evento">Eventi</a>
 			<a href="/servizio">Servizi</a>
 			<a href="/recensione">Community</a>
@@ -46,12 +46,12 @@
 						<div class="user-info">
 							<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
 						</div>
-						<div th:if="${userRole == 'DEFAULT'}" >
+						<div th:if="${userRole == 'DEFAULT'}">
 							<a href="/cliente/profile">Profilo</a>
-						    <a href="/cliente/evento">Scrivi una Recensione</a>
-						    <a href="/cliente/carrello">I miei acquisti</a>
+							<a href="/cliente/evento">Scrivi una Recensione</a>
+							<a href="/cliente/carrello">I miei acquisti</a>
 						</div>
-						
+
 						<a href="/logout">Logout</a>
 					</div>
 					<div class="arrow-down"></div>

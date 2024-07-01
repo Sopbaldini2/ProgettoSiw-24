@@ -1,109 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Agenzia Eventi - Nuovo servizio</title>
-		
-		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-		
-		<!--comando per legare un foglio di stile esterno all'html-->
-		<link rel="stylesheet" href="/css/newServizio.css">
-		
-		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
-	</head>
-	<body>
-		
-		<header>
-			
-			<input type="checkbox" name="" id="toggler">
-			<label for="toggler" class="fas fa-bars"></label>
-			
-			<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
-			<nav class="navbar">
-				<a href="/success">Home</a>
-				<a href="/evento">Eventi</a>
-			</nav>
-			
-			<div class="icons">
-				<a href="/formSearchEventi" class="fas fa-search"></a>
-				<div class="dropdown" id="userDropdown">
-					<span class="user-icon fas fa-user"></span>
-                    <div class="dropdown-content" id="dropdownContent">
-						<div class="user-info">
-							<!-- Mostra il nome admin dinamicamente -->
-							
-                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
-                        </div>
-                        <!-- Link per logout admin -->
-                        <a href="/logout">Logout</a>
-                    </div>
-                    <div class="arrow-down"></div>
-               </div>
-			</div>			
-			
-		</header>
-		
-        <!-- header section ends -->
-        
-        <!-- New servizio section starts -->
-        
-        <div class="servizio_main">
-			
-			<h1>Aggiungi un servizio</h1>
-			
-	        <form th:action="@{/admin/servizio}" method="POST" th:object="${servizio}">
-				
-				<div th:if="${#fields.hasGlobalErrors()}">
-					<span th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</span> 
-  		        </div>
-		
-		        <div class="titolo">
-					<label>Nome:</label> 
-					<span><input type="text" th:field="${servizio.nome}" /></span>
-		            <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
-		            </span>
-		       </div>
-		
-		       <div class="price">
-				   <label>Prezzo:</label> <span><input type="number" th:field="${servizio.prezzo}" /></span>
-		           <span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}">
-		           </span>
-		       </div>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aggiungi servizio</title>
 
-		       <div class="description">
-				   <label>Descrizione:</label> 
-				   <span>
-        <textarea id="descrizione" th:field="${servizio.descrizione}"></textarea>
-    </span>
-		           <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}">
-		           </span>
-		      </div>
+	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-		     <div class="image">
-				 <label>Image:</label> <span><input type="file" id="image" name="image" accept="image/png" /></span>
-				 <span th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
-		           </span>
-		     </div>
-		     
-		     <div class="video">
-				 <label for="video">Video:</label>
-                 <input type="file" id="video" name="video" accept="video/*" />
-                 <span th:if="${#fields.hasErrors('video')}" th:errors="*{video}">
-		           </span>
-             </div>
-             
-		     <div>
-				 <span><button type="submit">Conferma</button></span>
-		     </div>
-	      </form>
-        </div>
-        
-       <!-- New Servizio section ends --> 
-        
-   </body>
- 
+	<!--comando per legare un foglio di stile esterno all'html-->
+	<link rel="stylesheet" href="/css/newServizio.css">
+
+	<link rel="shortcut icon" href="/images/iconaM.png " type="image/x-icon">
+</head>
+
+<body>
+
+	<header>
+
+		<input type="checkbox" name="" id="toggler">
+		<label for="toggler" class="fas fa-bars"></label>
+
+		<a href="/success" class="logo"> Marik'<span>Events</span></a>
+
+		<nav class="navbar">
+			<a href="/success">Home</a>
+			<a href="/evento">Eventi</a>
+		</nav>
+
+		<div class="icons">
+			<a href="/formSearchEventi" class="fas fa-search"></a>
+			<div class="dropdown" id="userDropdown">
+				<span class="user-icon fas fa-user"></span>
+				<div class="dropdown-content" id="dropdownContent">
+					<div class="user-info">
+						<!-- Mostra il nome admin dinamicamente -->
+
+						<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+					</div>
+					<!-- Link per logout admin -->
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="arrow-down"></div>
+			</div>
+		</div>
+
+	</header>
+
+	<!-- header section ends -->
+
+	<!-- New servizio section starts -->
+
+	<div class="servizio_main">
+
+		<h1>Aggiungi un servizio</h1>
+
+		<form th:action="@{/admin/servizio}" method="POST" th:object="${servizio}">
+
+			<div th:if="${#fields.hasGlobalErrors()}">
+				<span th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</span>
+			</div>
+
+			<div class="titolo">
+				<label>Nome:</label>
+				<span><input type="text" th:field="${servizio.nome}" /></span>
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
+				</span>
+			</div>
+
+			<div class="price">
+				<label>Prezzo:</label> <span><input type="number" th:field="${servizio.prezzo}" /></span>
+				<span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}">
+				</span>
+			</div>
+
+			<div class="description">
+				<label>Descrizione:</label>
+				<span>
+					<textarea id="descrizione" th:field="${servizio.descrizione}"></textarea>
+				</span>
+				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}">
+				</span>
+			</div>
+
+			<div class="image">
+				<label>Image:</label> <span><input type="file" id="image" name="image" accept="image/png" /></span>
+				<span th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
+				</span>
+			</div>
+
+			<div class="video">
+				<label for="video">Video:</label>
+				<input type="file" id="video" name="video" accept="video/*" />
+				<span th:if="${#fields.hasErrors('video')}" th:errors="*{video}">
+				</span>
+			</div>
+
+			<div>
+				<span><button type="submit">Conferma</button></span>
+			</div>
+		</form>
+	</div>
+
+	<!-- New Servizio section ends -->
+
+</body>
+
 </html>

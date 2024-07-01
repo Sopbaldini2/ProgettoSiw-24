@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Agenzia Eventi - Evento</title>
+	<title>Dettagli Evento</title>
 
 	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -26,7 +26,7 @@
 		<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
 		<nav class="navbar">
-		    <a href="/success">Home</a>
+			<a href="/success">Home</a>
 			<a href="/cliente/evento">Eventi</a>
 			<a href="/servizio">Servizi</a>
 			<a href="/recensione">Community</a>
@@ -55,7 +55,7 @@
 
 			<!-- Se l'utente NON è autenticato -->
 			<a sec:authorize="!isAuthenticated()" href="/login" class="fas fa-user"></a>
-		</div>	
+		</div>
 	</header>
 
 
@@ -104,7 +104,8 @@
 							<div class="user">
 								<img th:src="@{'/images/clienti/' + ${recensione.cliente.image}}">
 								<div class="user-info">
-									<h3 th:text="${recensione.cliente?.nome} + ' ' + ${recensione.cliente?.cognome}">Giovanni Bianchi</h3>
+									<h3 th:text="${recensione.cliente?.nome} + ' ' + ${recensione.cliente?.cognome}">
+										Giovanni Bianchi</h3>
 									<span>Happy customer</span>
 								</div>
 							</div>

@@ -80,7 +80,7 @@
                 <img th:src="@{'/images/clienti/' + ${recensione.cliente.image}}" > 
                 <div class="user-info">
 				<h3 th:text="${recensione.cliente?.nome} + ' ' + ${recensione.cliente?.cognome}">Giovanni Bianchi</h3>
-                    <span>Happy customer</span>
+                  <span th:text="${recensione.evento.nome}">Sinfonia delle stelle</span>
                 </div>
             </div>
             <span class="fas fa-quote-right"></span>

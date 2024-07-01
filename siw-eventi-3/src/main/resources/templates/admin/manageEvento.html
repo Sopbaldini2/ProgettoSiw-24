@@ -1,83 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Agenzia Eventi - Manage Evento</title>
-		
-		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-		
-		<!--comando per legare un foglio di stile esterno all'html-->
-		<link rel="stylesheet" href="/css/manageEvento.css">
-		
-		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
-	</head>
-	<body>
-		
-		<header>
-			
-			<input type="checkbox" name="" id="toggler">
-			<label for="toggler" class="fas fa-bars"></label>
-			
-			<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
-			<nav class="navbar">
-				<a href="/success">Home</a>
-				<a href="/evento">Eventi</a>
-			</nav>
-			
-			<div class="icons">
-				<a href="/formSearchEventi" class="fas fa-search"></a>
-				<div class="dropdown" id="userDropdown">
-					<span class="user-icon fas fa-user"></span>
-                    <div class="dropdown-content" id="dropdownContent">
-						<div class="user-info">
-							<!-- Mostra il nome admin dinamicamente -->
-							
-                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
-                        </div>
-                        <!-- Link per logout admin -->
-                        <a href="/logout">Logout</a>
-                    </div>
-                    <div class="arrow-down"></div>
-               </div>
-			</div>			
-			
-			
-		</header>
-		
-        <!-- header section ends -->
-        
-        <!-- Manage degli eventi section starts -->
-        
-        <div class="eventi">
-			<h1>Eventi</h1>
-	        <div th:if="${eventi==null || eventi.isEmpty()}"> </div>
-	        <ul>
-				<li th:each="evento : ${eventi}">
-			        <img th:src="@{'/images/eventi/' + ${evento.image}}" alt="Immagine dell'evento">
-			        <span th:text="${evento.nome} ">Nome dell'evento</span>
-			        <div class="tipo">
-						<span th:text="${evento.tipologia}">Tipologia</span>
-			        </div>
-			
-			        <div class="btn-group">
-						<form th:action="@{'/admin/formUpdateEvento/' + ${evento.id}}" method="get">
-							<button type="submit" class="btn">Aggiorna</button>
-                        </form>
-                        <form th:action="@{'/admin/evento/' + ${evento.id}+ '/delete'}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare questo evento?');">
-							<button type="submit" class="btn">Elimina</button>
-                        </form>
-                   </div>
-	
-               </li>
-	        </ul>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Manage Evento</title>
+
+	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<!--comando per legare un foglio di stile esterno all'html-->
+	<link rel="stylesheet" href="/css/manageEvento.css">
+
+	<link rel="shortcut icon" href="/images/iconaM.png " type="image/x-icon">
+</head>
+
+<body>
+
+	<header>
+
+		<input type="checkbox" name="" id="toggler">
+		<label for="toggler" class="fas fa-bars"></label>
+
+		<a href="/success" class="logo"> Marik'<span>Events</span></a>
+
+		<nav class="navbar">
+			<a href="/success">Home</a>
+			<a href="/evento">Eventi</a>
+		</nav>
+
+		<div class="icons">
+			<a href="/formSearchEventi" class="fas fa-search"></a>
+			<div class="dropdown" id="userDropdown">
+				<span class="user-icon fas fa-user"></span>
+				<div class="dropdown-content" id="dropdownContent">
+					<div class="user-info">
+						<!-- Mostra il nome admin dinamicamente -->
+
+						<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+					</div>
+					<!-- Link per logout admin -->
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="arrow-down"></div>
+			</div>
 		</div>
-	
-	    <!--Manage degli eventi section ends-->
-	
-   </body>
+
+
+	</header>
+
+	<!-- header section ends -->
+
+	<!-- Manage degli eventi section starts -->
+
+	<div class="eventi">
+		<h1>Eventi</h1>
+		<div th:if="${eventi==null || eventi.isEmpty()}"> </div>
+		<ul>
+			<li th:each="evento : ${eventi}">
+				<img th:src="@{'/images/eventi/' + ${evento.image}}" alt="Immagine dell'evento">
+				<span th:text="${evento.nome} ">Nome dell'evento</span>
+				<div class="tipo">
+					<span th:text="${evento.tipologia}">Tipologia</span>
+				</div>
+
+				<div class="btn-group">
+					<form th:action="@{'/admin/formUpdateEvento/' + ${evento.id}}" method="get">
+						<button type="submit" class="btn">Aggiorna</button>
+					</form>
+					<form th:action="@{'/admin/evento/' + ${evento.id}+ '/delete'}" method="post"
+						onsubmit="return confirm('Sei sicuro di voler eliminare questo evento?');">
+						<button type="submit" class="btn">Elimina</button>
+					</form>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+
+	<!--Manage degli eventi section ends-->
+
+</body>
 
 </html>

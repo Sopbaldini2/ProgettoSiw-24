@@ -42,4 +42,12 @@ public class RecensioneService {
 	public List<Recensione> findByCliente(Cliente cliente) {
         return recensioneRepository.findByCliente(cliente);
     }
+
+	public List<Recensione> findByEventoId(Long id) {
+		return recensioneRepository.findByEventoId(id);
+	}
+
+	public void deleteById(Long id) {
+		recensioneRepository.deleteById(id);
+	}
 }

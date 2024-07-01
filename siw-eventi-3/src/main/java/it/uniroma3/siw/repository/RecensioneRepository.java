@@ -15,4 +15,6 @@ public interface RecensioneRepository extends CrudRepository<Recensione,Long>{
 
 	public List<Recensione> findByCliente(Cliente cliente);
 
+	public List<Recensione> findByEventoId(Long id);
+
 }

@@ -17,11 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.siw.controller.validator.EventoValidator;
 import it.uniroma3.siw.model.Evento;
-//import it.uniroma3.siw.model.Recensione;
-//import it.uniroma3.siw.model.Recensione;
+import it.uniroma3.siw.model.Recensione;
 import it.uniroma3.siw.model.Servizio;
 import it.uniroma3.siw.service.EventoService;
-//import it.uniroma3.siw.service.RecensioneService;
+import it.uniroma3.siw.service.RecensioneService;
 import it.uniroma3.siw.service.ServizioService;
 import jakarta.validation.Valid;
 
@@ -31,8 +30,8 @@ public class EventoController {
 	private EventoService eventoService;
 	@Autowired
 	private ServizioService servizioService;
-	//@Autowired
-	//private RecensioneService recensioneService;
+	@Autowired
+	private RecensioneService recensioneService;
 	@Autowired
 	private EventoValidator eventoValidator;
 	
@@ -153,7 +152,7 @@ public class EventoController {
 	
 	
 	
-	@PostMapping("/admin/evento/{id}/delete")
+	/*@PostMapping("/admin/evento/{id}/delete")
   public String deleteEvento(@PathVariable("id") Long id, Model model) {
       Evento Evento = eventoService.findById(id);
       if (Evento != null) {
@@ -165,8 +164,31 @@ public class EventoController {
           model.addAttribute("messaggioErrore", "Evento non trovato");
           return "admin/indexEvento.html";
           }
-      }	
+      }	*/
 	
+	/*Metodo che cancella gli eventi e le relative recensioni se presenti*/
+	@PostMapping("/admin/evento/{id}/delete")
+	public String deleteEvento(@PathVariable("id") Long id, Model model) {
+	    Evento evento = eventoService.findById(id);
+	    if (evento != null) {
+	        // Elimina tutte le recensioni associate all'evento
+	        List<Recensione> recensioni = recensioneService.findByEventoId(id);
+	        for (Recensione recensione : recensioni) {
+	            recensioneService.deleteById(recensione.getId());
+	        }
+	        
+	        // Elimina l'evento
+	        eventoService.deleteById(id);
+	        
+	        // Redirect alla pagina dell'indice degli eventi dopo la cancellazione
+	        return "redirect:/evento";
+	    } else {
+	        // Nel caso in cui l'evento non esista
+	        model.addAttribute("messaggioErrore", "Evento non trovato");
+	        return "admin/indexEvento.html";
+	    }
+	}
+
 	
 	
 	/*cliente*/

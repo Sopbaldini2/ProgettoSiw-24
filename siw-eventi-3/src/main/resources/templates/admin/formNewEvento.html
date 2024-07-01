@@ -56,7 +56,7 @@
 	    <h1>Aggiungi un evento</h1>
 	    <form th:action="@{/admin/evento}" method="POST" th:object="${evento}">
 			<div th:if="${#fields.hasGlobalErrors()}">
-				<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+				<span th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</span> 
   		    </div>
 		
 		    <div class="nome">
@@ -73,7 +73,10 @@
 		  </div>
 
 		  <div class="description">
-			  <label>Descrizione:</label> <span><input type="text" th:field="${evento.descrizione}" /></span>
+			  <label>Descrizione:</label> 
+			  <span>
+        <textarea id="descrizione" th:field="${evento.descrizione}"></textarea>
+    </span>
 		      <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}">
 		      </span>
 		 </div>
@@ -92,6 +95,8 @@
 		
 		 <div>
 			 <label>Image:</label> <span><input type="file" id="image" name="image" accept="image/png" /></span>
+			 <span th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
+		     </span>
          <div>
 			 
 			<span><button type="submit">Conferma</button></span>

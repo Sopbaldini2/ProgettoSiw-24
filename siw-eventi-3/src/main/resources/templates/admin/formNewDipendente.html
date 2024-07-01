@@ -1,106 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Agenzia Eventi - Nuovo Dipendente</title>
-		
-		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-		
-		<!--comando per legare un foglio di stile esterno all'html-->
-		<link rel="stylesheet" href="/css/newDipendente.css">
-		
-		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
-	</head>
-	<body>
-		
-		<header>
-			
-			<input type="checkbox" name="" id="toggler">
-			<label for="toggler" class="fas fa-bars"></label>
-			
-			<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
-			<nav class="navbar">
-				<a href="/success">Home</a>
-				<a href="/dipendente">Performers</a>
-			</nav>
-			
-			<div class="icons">
-				<a href="/formSearchEventi" class="fas fa-search"></a>
-				<div class="dropdown" id="userDropdown">
-					<span class="user-icon fas fa-user"></span>
-                    <div class="dropdown-content" id="dropdownContent">
-						<div class="user-info">
-							<!-- Mostra il nome admin dinamicamente -->
-							
-                            <span class="user-name" th:text="${userDetails.username}">Marik Events</span>
-                        </div>
-                        <!-- Link per logout admin -->
-                        <a href="/logout">Logout</a>
-                    </div>
-                    <div class="arrow-down"></div>
-               </div>
-			</div>			
-			
-			
-		</header>
-		
-        <!-- header section ends -->
-        
-        <!-- New Dipendente section starts -->
-        
-        <div class="dipendente_main">
-			<h1>Aggiungi un Performer</h1>
-            <form th:action="@{/admin/dipendente}" method="POST" th:object="${dipendente}" class="form">
-				<div th:if="${#fields.hasGlobalErrors()}">
-					<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-                </div>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Agenzia Eventi - Nuovo Dipendente</title>
 
-                <div>
-					<label for="nome">Nome:</label>
-                    <input type="text" th:field="${dipendente.nome}" class="form-control" id="nome" />
-                    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
-               </div>
+	<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-               <div>
-				   <label for="cognome">Cognome:</label>
-                   <input type="text" th:field="${dipendente.cognome}" class="form-control" id="cognome" />
-                   <span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
-               </div>
+	<!--comando per legare un foglio di stile esterno all'html-->
+	<link rel="stylesheet" href="/css/newDipendente.css">
 
-               <div>
-				   <label for="email">Email:</label>
-                   <input type="text" th:field="${dipendente.email}" class="form-control" id="email" />
-                   <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-               </div>
+	<link rel="shortcut icon" href="/images/iconaM.png " type="image/x-icon">
+</head>
 
-               <div>
-				   <label for="telefono">Telefono:</label>
-                   <input type="text" th:field="${dipendente.telefono}" class="form-control" id="telefono" />
-                   <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></span>
-               </div>
+<body>
 
-              <div>
-				  <label for="ruolo">Ruolo:</label>
-                  <input type="text" th:field="${dipendente.ruolo}" class="form-control" id="ruolo" />
-              </div>
+	<header>
 
-              <div>
-				  <label for="image">Immagine:</label>
-                  <input type="file" th:field="${dipendente.image}" class="form-control-file" id="image" />
-              </div>
+		<input type="checkbox" name="" id="toggler">
+		<label for="toggler" class="fas fa-bars"></label>
 
-              <div>
-				  <button type="submit" class="btn btn-primary">Conferma</button>
-              </div>
-           </form>
-        </div>
+		<a href="/success" class="logo"> Marik'<span>Events</span></a>
 
-        
-        <!-- New Dipendente section ends -->
-     </body>
+		<nav class="navbar">
+			<a href="/success">Home</a>
+			<a href="/dipendente">Performers</a>
+		</nav>
+
+		<div class="icons">
+			<a href="/formSearchEventi" class="fas fa-search"></a>
+			<div class="dropdown" id="userDropdown">
+				<span class="user-icon fas fa-user"></span>
+				<div class="dropdown-content" id="dropdownContent">
+					<div class="user-info">
+						<!-- Mostra il nome admin dinamicamente -->
+
+						<span class="user-name" th:text="${userDetails.username}">Marik Events</span>
+					</div>
+					<!-- Link per logout admin -->
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="arrow-down"></div>
+			</div>
+		</div>
+
+
+	</header>
+
+	<!-- header section ends -->
+
+	<!-- New Dipendente section starts -->
+
+	<div class="dipendente_main">
+		<h1>AGGIUNGI UN PERFORMER</h1>
+		<form th:action="@{/admin/dipendente}" method="POST" th:object="${dipendente}" class="form">
+			<div th:if="${#fields.hasGlobalErrors()}">
+				<span th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</span>
+			</div>
+
+			<div class="nome">
+				<label>Nome:</label>
+				<span><input type="text" th:field="${dipendente.nome}" /></span>
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
+				</span>
+			</div>
+
+			<div class="price">
+				<label>Cognome:</label> <span><input type="text" th:field="${dipendente.cognome}" /></span>
+				<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}">
+				</span>
+			</div>
+
+			<div class="description">
+				<label>Ruolo:</label> <span><input type="text" th:field="${dipendente.ruolo}" /></span>
+				<span th:if="${#fields.hasErrors('ruolo')}" th:errors="*{ruolo}">
+				</span>
+			</div>
+
+			<div class="tipo">
+				<label>Email:</label> <span><input type="text" th:field="${dipendente.email}" /></span>
+				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+				</span>
+			</div>
+
+			<div class="data_dipendente">
+				<label>Telefono:</label> <span><input type="text" th:field="${dipendente.telefono}" /></span>
+				<span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">
+				</span>
+			</div>
+
+			<div>
+				<label>Image:</label> <span><input type="file" id="image" name="image" accept="image/png" /></span>
+				<span th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
+				</span>
+			</div>
+
+			<span><button type="submit">Conferma</button></span>
+		</form>
+	</div>
+
+
+	<!-- New Dipendente section ends -->
+</body>
 
 </html>

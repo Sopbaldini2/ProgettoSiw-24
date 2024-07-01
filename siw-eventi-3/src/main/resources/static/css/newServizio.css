@@ -247,7 +247,8 @@ label {
 
 input[type="text"],
 input[type="number"],
-input[type="file"] {
+input[type="file"],
+textarea{
     width: 100%;
     padding: 1rem;
     border: 1px solid var(--border-color);
@@ -260,16 +261,18 @@ input[type="file"] {
 
 input[type="text"]:focus,
 input[type="number"]:focus,
-input[type="file"]:focus {
+input[type="file"]:focus,
+textarea:focus{
     border-color:var(--pink);
     box-shadow: 0 0 5px var(--input-focus);
 }
 
 .servizio_main span {
+    text-align: center;
     display: block;
-    margin-top: .5rem;
-    color: var(--error-color);
-    font-size: 1.2rem;
+	margin-top: .3rem;
+	color: var(--error-color);
+	font-size: 1.4rem;
 }
 
 button {

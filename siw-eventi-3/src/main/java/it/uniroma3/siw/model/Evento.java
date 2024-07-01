@@ -32,7 +32,9 @@ public class Evento {
 	private String descrizione;
 	@NotBlank(message = "{evento.tipologia.notblank}")
 	private String tipologia;
+	@NotBlank(message = "{evento.image.notblank}")
 	private String image;
+	@NotNull(message = "{evento.data.notnull}")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate data;
 	

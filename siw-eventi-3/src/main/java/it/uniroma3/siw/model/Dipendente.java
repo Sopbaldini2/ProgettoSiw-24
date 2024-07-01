@@ -19,7 +19,9 @@ public class Dipendente {
 	private String nome;
 	@NotBlank(message = "{dipendente.cognome.notblank}")
 	private String cognome;
+	@NotBlank(message = "{dipendente.ruolo.notblank}")
 	private String ruolo;
+	@NotBlank(message = "{dipendente.image.notblank}")
 	private String image;
 	@NotBlank(message = "{dipendente.email.notblank}")
 	private String email;

@@ -27,7 +27,9 @@ public class Servizio {
 	@NotNull
 	@Min(10)
 	private Float prezzo;
+	@NotBlank(message = "{servizio.image.notblank}")
 	private String image;
+	@NotBlank(message = "{servizio.video.notblank}")
 	private String video;
 	
 	

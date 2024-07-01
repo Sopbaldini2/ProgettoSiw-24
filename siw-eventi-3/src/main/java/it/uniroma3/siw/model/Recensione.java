@@ -26,7 +26,6 @@ public class Recensione {
 	@Max(5)
 	private Integer voto;
 	
-	
 	@ManyToOne
 	private Evento evento;
 	

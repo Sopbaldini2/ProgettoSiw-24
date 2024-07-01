@@ -40,15 +40,14 @@ public class Evento {
 	
 	@OneToMany(mappedBy="evento")
 	private List<Recensione> recensioni;
-	@ManyToMany
-	private List<Dipendente> collaboratori;
+
 	@ManyToMany
 	private List<Servizio> servizi;
 	
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(collaboratori, data, descrizione, id, nome, prezzo, recensioni, servizi,
+		return Objects.hash(data, descrizione, id, nome, prezzo, recensioni, servizi,
 				tipologia);
 	}
 	@Override
@@ -60,17 +59,11 @@ public class Evento {
 		if (getClass() != obj.getClass())
 			return false;
 		Evento other = (Evento) obj;
-		return Objects.equals(collaboratori, other.collaboratori) && Objects.equals(data, other.data)
+		return Objects.equals(data, other.data)
 				&& Objects.equals(descrizione, other.descrizione) && Objects.equals(id, other.id)
 			    && Objects.equals(nome, other.nome)
 				&& Objects.equals(prezzo, other.prezzo) && Objects.equals(recensioni, other.recensioni)
 				&& Objects.equals(servizi, other.servizi) && Objects.equals(tipologia, other.tipologia);
-	}
-	public List<Dipendente> getCollaboratori() {
-		return collaboratori;
-	}
-	public void setCollaboratori(List<Dipendente> collaboratori) {
-		this.collaboratori = collaboratori;
 	}
 	
 	public List<Servizio> getServizi() {

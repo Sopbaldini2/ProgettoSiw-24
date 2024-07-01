@@ -70,6 +70,7 @@
 
                <section class="servizi-info">
 				   <h4>Servizi:</h4>
+				   	<div th:if="${#lists.isEmpty(evento.servizi)}">Non ci sono servizi associati a questo evento</div>
                    <ul>
 					   <li th:each="servizio : ${evento.servizi}">
 						   <div class="servizio_image">
@@ -85,13 +86,13 @@
 						  <button type="button">Modifica</button>
                       </a>
                  </div>
-                 <div th:unless="${evento.servizi}">Non ci sono servizi associati a questo evento</div>
              </section>
              
              <section class="recensioni-info">
 				<h4>Recensioni:</h4>
 				<div class="recensione">
-				<div class="box-container">				
+				<div class="box-container">	
+					<div th:if="${#lists.isEmpty(evento.recensioni)}" class="no-recensioni">Non ci sono recensioni per questo evento</div>						
 					<div th:each="recensione : ${evento.recensioni}" class="box">
 						<div class="stars">
 							<i class="fas fa-star" th:each="star : ${#numbers.sequence(1, recensione.voto)}"></i>

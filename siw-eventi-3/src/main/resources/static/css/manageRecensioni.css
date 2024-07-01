@@ -195,7 +195,7 @@ header .icons .dropdown-content {
 }
 
 
-/* Manage dei dipendenti section */
+/* Manage delle recensioni section */
 
 .recensioni_main {
     margin-top: 9rem;
@@ -224,6 +224,10 @@ header .icons .dropdown-content {
     background-color: rgba(255, 255, 255, 0.1); /* Aggiunto */
     border-radius: 0.5rem; /* Aggiunto */
     padding: 1.5rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 12rem; /* Altezza minima per uniformità */
 }
 
 .recensioni_main .stars {
@@ -240,11 +244,26 @@ header .icons .dropdown-content {
 	color: #fff;
 }
 
+.recensioni_main .user-info {
+    margin-top: auto; /* Spinge i dati del cliente in basso */
+    align-self: center; /* Allinea a sinistra */
+}
+
 .recensioni_main .user-info h3 {
     font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: #ccc;
+}
+
+.recensioni_main .user-info span {
+	font-size: 1.3rem;
+	color: var(--pink);
+}
+
+.recensioni_main form {
+	margin-top: 1rem;
+    align-self: center; /* Posiziona il form in fondo */
 }
 
 .recensioni_main form button {
@@ -272,11 +291,6 @@ header .icons .dropdown-content {
 .recensioni_main .comment-box p {
     font-size: 1.8rem;
 }
-
-
-
-
-
 
 
 

@@ -325,6 +325,7 @@ header .icons .dropdown-content {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    justify-content: center;
 }
 
 .recensione .box-container .box {
@@ -332,7 +333,10 @@ header .icons .dropdown-content {
     box-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
     padding: 3rem 2rem;
+    flex: 1 1 30rem; /* Dimensione fissa del box */
     position: relative;
+    display: flex;
+    flex-direction: column;
     border: 0.1rem solid rgba(255, 255, 255, 0.1);
     background-color: #1a1a1a; /* Colore di sfondo scuro */
     color: #fff; /* Colore del testo bianco */
@@ -356,12 +360,16 @@ header .icons .dropdown-content {
 .recensione .box-container .box p {
     font-size: 1.5rem;
     padding: 1rem 0;
+    margin-bottom: 1rem;
 }
 
 .recensione .box-container .box .user {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-bottom: 2rem;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto; 
 }
 
 .recensione .box-container .box .user img {
@@ -375,15 +383,6 @@ header .icons .dropdown-content {
 .recensione .box-container .box .user h3 {
     font-size: 2rem;
 }
-
-
-
-
-
-
-
-
-
 
 
 /*media queries*/

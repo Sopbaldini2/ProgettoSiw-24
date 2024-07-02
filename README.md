@@ -22,8 +22,8 @@ Operazioni di lettura:
 Operazioni di lettura, come per l'utente occasionale
 
 Operzioni di inserimento:
--il cliente contatta l'agenzia mediante il form
--Il cliente scrive una recensione per un evento inserendo un commento ed un voto
+- Il cliente contatta l'agenzia mediante il form
+- Il cliente scrive una recensione per un evento inserendo un commento ed un voto
 
 Operazioni di aggiornamento:
 - Il cliente modifica i suoi dati e la foto profilo

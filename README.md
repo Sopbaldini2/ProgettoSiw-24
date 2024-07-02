@@ -7,14 +7,14 @@ Progetto SIW Veronica Catalano e Sophie Baldini
 ## UTENTE OCCASIONALE
 
 Operazioni di lettura:
- -visualizzazione di tutti gli eventi con i relativi dettagli
- -visualizzazione di tutti i servizi con i relativi dettagli
- -visualizzazione di tutte le recensioni 
- -visualizzazione di eventi tramite ricerca
- -visualizzazione di tutti i performer
+ - Visualizzazione di tutti gli eventi con i relativi dettagli
+ - Visualizzazione di tutti i servizi con i relativi dettagli
+ - Visualizzazione di tutte le recensioni 
+ - Visualizzazione di eventi tramite ricerca
+ - Visualizzazione di tutti i performer
 
  Operazioni di inserimento:
--contatta agenzia mediante il form
+- Contatta agenzia mediante il form
 
 
 ## UTENTE REGISTRATO (o cliente)
@@ -26,11 +26,11 @@ Operzioni di inserimento:
 -Il cliente scrive una recensione per un evento inserendo un commento ed un voto
 
 Operazioni di aggiornamento:
--il cliente modifica i suoi dati e la foto profilo
--il cliente aggiunge o rimuove dal carrello i servizi acquistati per il suo evento
+- Il cliente modifica i suoi dati e la foto profilo
+- Il cliente aggiunge o rimuove dal carrello i servizi acquistati per il suo evento
 
 Operazioni di cancellazione:
--il cliente cancella le sue recensioni
+- Il cliente cancella le sue recensioni
 
 
 ## UTENTE CON IL RUOLO DI ADMIN

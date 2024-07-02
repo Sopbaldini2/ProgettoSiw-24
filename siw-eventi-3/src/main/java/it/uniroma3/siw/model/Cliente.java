@@ -28,9 +28,6 @@ public class Cliente {
 	
 	@OneToMany
 	private List<Recensione> recensioni;
-	@OneToMany
-	private List<Servizio> richiesti;
-	
 	
 	
 	public List<Recensione> getRecensioni() {

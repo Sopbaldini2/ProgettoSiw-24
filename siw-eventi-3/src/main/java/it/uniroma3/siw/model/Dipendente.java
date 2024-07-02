@@ -30,7 +30,7 @@ public class Dipendente {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(cognome, email, id, nome, organizzati, telefono);
+		return Objects.hash(cognome, email, id, nome,telefono);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class Dipendente {
 		Dipendente other = (Dipendente) obj;
 		return Objects.equals(cognome, other.cognome) 
 				&& Objects.equals(email, other.email) && Objects.equals(id, other.id)
-				&& Objects.equals(nome, other.nome) && Objects.equals(organizzati, other.organizzati)
+				&& Objects.equals(nome, other.nome)
 				&& Objects.equals(telefono, other.telefono);
 	}
 
@@ -104,14 +104,5 @@ public class Dipendente {
 		this.telefono = telefono;
 	}
 
-	public List<Evento> getOrganizzati() {
-		return organizzati;
-	}
-
-	public void setOrganizzati(List<Evento> organizzati) {
-		this.organizzati = organizzati;
-	}
-
-	@ManyToMany(mappedBy="collaboratori")
-	private List<Evento> organizzati;
+	
 }

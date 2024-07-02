@@ -152,7 +152,7 @@ public class EventoController {
 	
 	
 	
-	/*@PostMapping("/admin/evento/{id}/delete")
+	@GetMapping("/admin/evento/{id}/delete")
   public String deleteEvento(@PathVariable("id") Long id, Model model) {
       Evento Evento = eventoService.findById(id);
       if (Evento != null) {
@@ -164,30 +164,7 @@ public class EventoController {
           model.addAttribute("messaggioErrore", "Evento non trovato");
           return "admin/indexEvento.html";
           }
-      }	*/
-	
-	/*Metodo che cancella gli eventi e le relative recensioni se presenti*/
-	@PostMapping("/admin/evento/{id}/delete")
-	public String deleteEvento(@PathVariable("id") Long id, Model model) {
-	    Evento evento = eventoService.findById(id);
-	    if (evento != null) {
-	        // Elimina tutte le recensioni associate all'evento
-	        List<Recensione> recensioni = recensioneService.findByEventoId(id);
-	        for (Recensione recensione : recensioni) {
-	            recensioneService.deleteById(recensione.getId());
-	        }
-	        
-	        // Elimina l'evento
-	        eventoService.deleteById(id);
-	        
-	        // Redirect alla pagina dell'indice degli eventi dopo la cancellazione
-	        return "redirect:/evento";
-	    } else {
-	        // Nel caso in cui l'evento non esista
-	        model.addAttribute("messaggioErrore", "Evento non trovato");
-	        return "admin/indexEvento.html";
-	    }
-	}
+      }
 
 	
 	

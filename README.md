@@ -27,7 +27,7 @@ Operzioni di inserimento:
 
 Operazioni di aggiornamento:
 - Il cliente modifica i suoi dati e la foto profilo
-- Il cliente aggiunge o rimuove dal carrello i servizi acquistati per il suo evento
+- Il cliente aggiunge o rimuove dal carrello i servizi acquistati per il suo evento e può pagare i servizi desiderati
 
 Operazioni di cancellazione:
 - Il cliente cancella le sue recensioni

@@ -22,7 +22,7 @@ import it.uniroma3.siw.service.ServizioService;
 public class CarrelloController {
     @Autowired
     private ServizioService servizioService;
-
+    
     private Map<Long, Integer> carrello = new HashMap<>();
 
     @GetMapping("/carrello")
@@ -66,5 +66,11 @@ public class CarrelloController {
             }
         }
         return "redirect:/cliente/carrello";
+    }
+    
+    @GetMapping("/carrello/pagamento")
+    public String confermaPagamento() {
+    	carrello.clear();
+        return "cliente/pagamento.html";
     }
 }

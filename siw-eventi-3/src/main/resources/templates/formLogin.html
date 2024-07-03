@@ -16,7 +16,8 @@
 <body>
 
 	<div>
-		<a href="/" class="logo"> Marik'<span>Events</span></a>
+		<a sec:authorize="isAuthenticated()" href="/success" class="logo"> Marik'<span>Events</span></a>
+		<a sec:authorize="!isAuthenticated()" href="/" class="logo"> Marik'<span>Events</span></a>
 	</div>
 
 	<div class="wrapper">

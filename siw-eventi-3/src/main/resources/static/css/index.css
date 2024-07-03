@@ -260,6 +260,14 @@ header .icons .dropdown-content {
 		padding: 2rem;
 		
 	}
+	
+	section{
+		padding: 2rem;
+	}
+	
+	.home{
+		background-position: left;
+	}
 }
 
 @media (max-width: 768px) {
@@ -299,6 +307,22 @@ header .icons .dropdown-content {
         width: 150px; /* Riduci la larghezza (già presente) */
         font-size: 1.2rem; /* Aggiungi questa nuova regola per aumentare la dimensione del testo */
     }
+    
+    .home .content h3{
+		font-size: 5rem;
+	}
+	
+	.home .content span{
+		font-size: 2.5rem;
+	}	
+	
+	.icons-container .icons h3{
+	    font-size: 2rem;
+    }
+
+    .icons-container .icons span{
+	    font-size: 1.7rem;
+    }
 }
 
 @media (max-width: 450px) {
@@ -306,6 +330,9 @@ header .icons .dropdown-content {
 	font-size: 50%;
 	}
 	
+	.heading{
+		font-size: 3rem;
+	}
 	.link-container a {
         padding: 12px; /* Riduci ulteriormente il padding per adattarsi a schermi molto piccoli */
         width: 130px; /* Riduci la larghezza per adattarsi a schermi molto piccoli */

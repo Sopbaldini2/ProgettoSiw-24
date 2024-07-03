@@ -104,7 +104,6 @@ header .fa-bars{
 	border: .1rem solid rgb(255, 255, 255);
 	display: none;
 }
-
 /* Icona per il menu mobile */
 
 header #toggler {
@@ -300,14 +299,6 @@ header .icons .dropdown-content {
 
 
 
-
-
-
-
-
-
-
-
 /*media queries*/
 
 @media (max-width:991px){
@@ -317,6 +308,14 @@ header .icons .dropdown-content {
 	
 	header{
 		padding: 2rem;
+	}
+	
+	section{
+		padding: 2rem;
+	}
+	
+	.home{
+		background-position: left;
 	}
 }	
 
@@ -348,6 +347,22 @@ header .icons .dropdown-content {
 		border: .1rem solid rgb(255, 255, 255);
 		display: block;
 	}
+	
+	.home .content h3{
+		font-size: 5rem;
+	}
+	
+	.home .content span{
+		font-size: 2.5rem;
+	}	
+	
+	.icons-container .icons h3{
+	    font-size: 2rem;
+    }
+
+    .icons-container .icons span{
+	    font-size: 1.7rem;
+    }
     
     header .icons .dropdown .user-icon {
         margin-right: 0.8rem; /* Riduci il margine destro per le icone più vicine */
@@ -360,7 +375,11 @@ header .icons .dropdown-content {
 
 @media (max-width:450px){
 	html{
-	font-size: 50%;
+	    font-size: 50%;
+	}
+	
+	.heading{
+		font-size: 3rem;
 	}
 	
 	header .icons .dropdown .user-info {

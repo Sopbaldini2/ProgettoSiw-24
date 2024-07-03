@@ -260,6 +260,14 @@ header .icons .dropdown-content {
 		padding: 2rem;
 		
 	}
+	
+	section{
+		padding: 2rem;
+	}
+	
+	.home{
+		background-position: left;
+	}
 }
 
 @media (max-width: 768px) {
@@ -298,10 +306,29 @@ header .icons .dropdown-content {
         padding: 10px; /* Esempio di ulteriore riduzione del padding */
         margin-right: 5px; /* Esempio di ulteriore riduzione del margine */
     }
+    
+    .home .content h3{
+		font-size: 5rem;
+	}
+	
+	.home .content span{
+		font-size: 2.5rem;
+	}	
+	
+	.icons-container .icons h3{
+	    font-size: 2rem;
+    }
+
+    .icons-container .icons span{
+	    font-size: 1.7rem;
+    }
 }
 
 @media (max-width: 450px) {
 	html{
-	font-size: 50%;
+	     font-size: 50%;
+	}
+	.heading{
+		font-size: 3rem;
 	}
 }

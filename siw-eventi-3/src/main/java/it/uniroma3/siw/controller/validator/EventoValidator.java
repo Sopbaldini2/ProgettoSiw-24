@@ -17,7 +17,7 @@ public class EventoValidator implements Validator {
 	public void validate(Object o, Errors errors) {
 		Evento evento = (Evento)o;
 		if (evento.getNome()!=null && evento.getData()!=null 
-				&& eventoRepository.existsByNomeAndData(evento.getNome(), evento.getData())) {
+				&& eventoRepository.existsByNomeIgnoreCaseAndData(evento.getNome(), evento.getData())) {
 			errors.reject("evento.duplicate");
 		}
 	}

@@ -30,8 +30,8 @@ public class EventoService {
 		
 	}
 
-	public List<Evento> findByNome(String nome) {
-		return eventoRepository.findByNome(nome);
+	public List<Evento> findByPartialNome(String nome) {
+		return eventoRepository.findByNomeContainingIgnoreCase(nome);
 	}
 
 	@Transactional

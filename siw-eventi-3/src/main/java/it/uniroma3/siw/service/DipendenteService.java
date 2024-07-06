@@ -24,9 +24,6 @@ public class DipendenteService {
 		return dipendenteRepository.findAll();
 	}
 
-	public boolean existsByNomeAndCognome(String nome, String cognome) {
-		   return dipendenteRepository.existsByNomeAndCognome(nome,  cognome);
-	}
 
 	public void delete(Dipendente dipendente) {
 		dipendenteRepository.delete(dipendente);

@@ -18,7 +18,7 @@ public class ServizioValidator implements Validator {
 	public void validate(Object o, Errors errors) {
 		Servizio servizio = (Servizio)o;
 		if (servizio.getNome()!=null 
-				&& servizioRepository.existsByNome(servizio.getNome())) {
+				&& servizioRepository.existsByNomeIgnoreCase(servizio.getNome())) {
 			errors.reject("servizio.duplicate");
 		}
 	}

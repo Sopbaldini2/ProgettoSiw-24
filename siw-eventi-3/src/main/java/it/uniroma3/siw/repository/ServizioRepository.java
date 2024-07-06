@@ -9,7 +9,7 @@ import it.uniroma3.siw.model.Servizio;
 
 public interface ServizioRepository extends CrudRepository<Servizio,Long>{
 
-public boolean existsByNome(String nome);
+public boolean existsByNomeIgnoreCase(String nome);
 	
 	@Query(value="select * "
 			+ "from servizio s "

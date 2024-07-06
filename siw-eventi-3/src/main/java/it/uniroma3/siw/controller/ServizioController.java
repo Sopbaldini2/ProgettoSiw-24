@@ -47,7 +47,7 @@ public class ServizioController {
 		if (!bindingResult.hasErrors()) {
 			this.servizioService.save(servizio); 
 			model.addAttribute("servizio", servizio);
-			return "servizio.html";
+			return "redirect:/servizio/" +servizio.getId();
 		} else {
 			return "admin/formNewServizio.html"; 
 		}

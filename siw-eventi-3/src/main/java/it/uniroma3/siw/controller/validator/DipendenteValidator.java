@@ -18,7 +18,7 @@ public class DipendenteValidator implements Validator {
 	public void validate(Object o, Errors errors) {
 		Dipendente Dipendente = (Dipendente)o;
 		if (Dipendente.getNome()!=null && Dipendente.getCognome()!=null 
-				&& DipendenteRepository.existsByNomeAndCognome(Dipendente.getNome(), Dipendente.getCognome())) {
+				&& DipendenteRepository.existsByNomeIgnoreCaseAndCognomeIgnoreCase(Dipendente.getNome(), Dipendente.getCognome())) {
 			errors.reject("dipendente.duplicate");
 		}
 	}

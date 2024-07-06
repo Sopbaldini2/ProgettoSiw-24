@@ -65,7 +65,7 @@ public class EventoController {
 		if (!bindingResult.hasErrors()) {
 			this.eventoService.save(evento); 
 			model.addAttribute("evento", evento);
-			return "evento.html";
+			return "redirect:/evento/" + evento.getId();
 		} else {
 			return "admin/formNewEvento.html"; 
 		}
@@ -95,7 +95,7 @@ public class EventoController {
 
 	@PostMapping("/searchEventi")
 	public String searchEventi(Model model, @RequestParam String nome) {
-		model.addAttribute("eventi", this.eventoService.findByNome(nome));
+		model.addAttribute("eventi", this.eventoService.findByPartialNome(nome));
 		return "foundEventi.html";
 	}
 	
@@ -122,7 +122,7 @@ public class EventoController {
 		model.addAttribute("evento", evento);
 		model.addAttribute("serviziToAdd", serviziToAdd);
 
-		return "admin/serviziToAdd.html";
+		return "redirect:/admin/updateServizi/" + evento.getId();
 	}
 	
 	@GetMapping(value="/admin/removeServizioFromEvento/{servizioId}/{eventoId}")
@@ -138,7 +138,7 @@ public class EventoController {
 		model.addAttribute("evento", evento);
 		model.addAttribute("serviziToAdd", serviziToAdd);
 
-		return "admin/serviziToAdd.html";
+		return "redirect:/admin/updateServizi/" + evento.getId();
 	}
 
 	private List<Servizio> serviziToAdd(Long eventoId) {

@@ -102,7 +102,8 @@
 							</div>
 							<p th:text="${recensione.commento}">commento</p>
 							<div class="user">
-								<img th:src="@{'/images/clienti/' + ${recensione.cliente.image}}">
+								<img th:src="@{'/images/clienti/' + ${recensione.cliente.image}}"
+								     onerror="this.onerror=null; this.src='/images/clienti/profilo.png';">
 								<div class="user-info">
 									<h3 th:text="${recensione.cliente.nome}">Giovanni</h3>
 									<span>Happy customer</span>

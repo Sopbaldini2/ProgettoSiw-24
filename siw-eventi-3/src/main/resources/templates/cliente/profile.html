@@ -64,7 +64,8 @@
 
 	<div class="container">
 		<div class="profile-header">
-			<img th:src="@{'/images/clienti/' + ${immagine}}" alt="">
+			<img th:src="@{'/images/clienti/' + ${immagine}}" alt=""
+			     onerror="this.onerror=null; this.src='/images/clienti/profilo.png';">
 			<div>
 				<h1 th:text="${nome} + ' ' + ${cognome}">Nome Cognome</h1>
 			</div>

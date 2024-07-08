@@ -61,10 +61,12 @@ public class ClienteService {
         return result;
     }
 
+    @Transactional
 	public Iterable<Cliente> findAll() {
 		return clienteRepository.findAll();
 	}
 
+    @Transactional
 	public Cliente findClienteByUsername(String clienteNome) {
 		Credentials credentials = credentialsRepository.findClienteByUsername(clienteNome);
         if (credentials != null) {

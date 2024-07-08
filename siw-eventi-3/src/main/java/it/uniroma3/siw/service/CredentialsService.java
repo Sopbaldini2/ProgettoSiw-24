@@ -42,7 +42,8 @@ public class CredentialsService {
     public void save(Credentials credentials) {
         credentialsRepository.save(credentials);
     }
-
+    
+    @Transactional
     public Credentials findClienteByUsername(String username) {
         return credentialsRepository.findClienteByUsername(username);
     }

@@ -95,7 +95,7 @@ public class EventoController {
 
 	@PostMapping("/searchEventi")
 	public String searchEventi(Model model, @RequestParam String nome) {
-		model.addAttribute("eventi", this.eventoService.findByPartialNome(nome));
+		model.addAttribute("eventi", this.eventoService.findByNome(nome));
 		return "foundEventi.html";
 	}
 	

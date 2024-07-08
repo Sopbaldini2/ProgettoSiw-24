@@ -16,22 +16,26 @@ public class EventoService {
 	@Autowired
 	private EventoRepository eventoRepository;
 	
+	@Transactional
 	public Evento findById(Long id) {
 		return eventoRepository.findById(id).get();
 	}
 
+	@Transactional
 	public Iterable<Evento> findAll() {
 		return eventoRepository.findAll();
 	}
 
+	@Transactional
 	public void save(Evento evento) {
 		// TODO Auto-generated method stub
 		eventoRepository.save(evento);
 		
 	}
 
-	public List<Evento> findByPartialNome(String nome) {
-		return eventoRepository.findByNomeContainingIgnoreCase(nome);
+	@Transactional
+	public List<Evento> findByNome(String nome) {
+		return eventoRepository.findByNome(nome);
 	}
 
 	@Transactional

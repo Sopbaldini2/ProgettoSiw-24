@@ -15,18 +15,22 @@ public class ServizioService {
 	@Autowired
 	private ServizioRepository servizioRepository;
 	
+	@Transactional
 	public Servizio findById(Long id) {
 		return servizioRepository.findById(id).get();
 	}
 	
+	@Transactional
 	public Iterable<Servizio> findAll() {
 		return servizioRepository.findAll();
 	}
 	
+	@Transactional
 	public Iterable<Servizio> findServiziNotInEvento(@Param("eventoId") Long id){
 		 return servizioRepository.findServiziNotInEvento(id);
 	}
 
+	@Transactional
 	public void save(Servizio servizio) {
 		// TODO Auto-generated method stub
 		this.servizioRepository.save(servizio);

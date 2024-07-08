@@ -1,5 +1,6 @@
 package it.uniroma3.siw.controller;
 
+import java.security.Principal;
 //import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +17,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.siw.controller.validator.EventoValidator;
+import it.uniroma3.siw.model.Cliente;
 import it.uniroma3.siw.model.Evento;
 import it.uniroma3.siw.model.Recensione;
 import it.uniroma3.siw.model.Servizio;
+import it.uniroma3.siw.service.ClienteService;
 import it.uniroma3.siw.service.EventoService;
 import it.uniroma3.siw.service.RecensioneService;
 import it.uniroma3.siw.service.ServizioService;
@@ -31,7 +34,7 @@ public class EventoController {
 	@Autowired
 	private ServizioService servizioService;
 	@Autowired
-	private RecensioneService recensioneService;
+	private ClienteService clienteService;
 	@Autowired
 	private EventoValidator eventoValidator;
 	
@@ -177,9 +180,32 @@ public class EventoController {
 	}
 	
 	@GetMapping("/cliente/evento/{id}")
-	public String getEventoCliente(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("evento", this.eventoService.findById(id));
-		return "cliente/eventoCliente.html";
+	public String getEventoCliente(@PathVariable("id") Long id, Model model, Principal principal) {
+	    boolean hasWrittenReview = false; // Variabile per tenere traccia se il cliente ha scritto una recensione
+
+	    if (principal != null) {
+	        String clienteNome = principal.getName(); // Ottieni il nome del cliente autenticato
+	        Cliente cliente = clienteService.findClienteByUsername(clienteNome); // Recupera l'oggetto cliente completo
+	        
+	        if (cliente != null) {
+	            model.addAttribute("cliente", cliente); // Aggiungi il cliente al modello
+	            
+	            // Controlla se il cliente ha scritto una recensione per questo evento
+	            Evento evento = eventoService.findById(id);
+	            for (Recensione recensione : evento.getRecensioni()) {
+	                if (recensione.getCliente().getId().equals(cliente.getId())) {
+	                    hasWrittenReview = true;
+	                    break;
+	                }
+	            }
+	        }
+	    }
+
+	    model.addAttribute("evento", eventoService.findById(id));
+	    model.addAttribute("hasWrittenReview", hasWrittenReview); // Aggiungi la variabile al modello
+
+	    return "cliente/eventoCliente.html";
 	}
+
 
 }

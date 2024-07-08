@@ -396,13 +396,14 @@ header .icons .dropdown-content {
 
 .servizi .box-container .box:hover .image .icons{
 	bottom: 0;
+
 }
 
 .servizi .box-container .box .image .icons a{
 	height: 5rem;
 	line-height:5rem;
 	font-size: 2rem;
-	width: 50%;
+	width: 100%;
 	background: var(--pink);
 	color: #fff;
 }

@@ -340,6 +340,19 @@ header .icons .dropdown-content {
 }
 
 
+.footer .credit{
+	text-align: center;
+	padding: 1.5rem;
+	margin-top: 1.5rem;
+	padding-top: 2.5rem;
+	font-size: 2rem;
+	color:rgb(255, 255, 255);
+	border-top: .1rem solid rgb(255, 255, 255);
+}
+
+.footer .credit span{
+	color: var(--pink);
+}
 
 
 

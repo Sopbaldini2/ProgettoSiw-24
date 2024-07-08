@@ -115,9 +115,12 @@
 
 					<!-- Pulsante per aggiungere recensione -->
 					<div class="text-center mt-3">
-						<a th:href="@{/cliente/formNewRecensione(id=${evento.id})}" class="btn btn-primary">Aggiungi
-							Recensione</a>
+						<a th:if="${!hasWrittenReview}" th:href="@{/cliente/formNewRecensione(id=${evento.id})}"
+							class="btn btn-primary">
+							Aggiungi Recensione
+						</a>
 					</div>
+				</div>
 			</section>
 		</div>
 	</div>
@@ -152,7 +155,6 @@
 				<a
 					href="https://www.google.com/search?q=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&rlz=1C1GCEA_enIT827IT827&oq=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDE2NjlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">Anguillara
 					Sabazia</a>
-				<img src="images/..." alt="">
 			</div>
 
 			<div class="box2">

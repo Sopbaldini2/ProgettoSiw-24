@@ -25,7 +25,6 @@ import it.uniroma3.siw.service.RecensioneService;
 public class RecensioneController {
 	@Autowired
 	private RecensioneService recensioneService;
-	
 	@Autowired
 	private ClienteService clienteService;
 	@Autowired

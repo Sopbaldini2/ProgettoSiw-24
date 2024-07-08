@@ -24,7 +24,7 @@
 			<form th:action="@{/searchEventi}" method="post">
 				<div class="attributo">
 					<input type="text" id="nome" name="nome" placeholder="Nome" />
-					<a th:href="${#authorization.expression('isAuthenticated()') ? '/cliente/indexUser' : '/'}"><i
+					<a th:href="${#authorization.expression('isAuthenticated()') ? '/success' : '/'}"><i
 							class="fa-solid fa-x"></i></a>
 				</div>
 				<div><input type="submit" value="Cerca" /></div>
